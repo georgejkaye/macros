@@ -1,0 +1,48 @@
+% set
+\newcommand{\set}{\textbf{Set}}
+
+% orders 
+\newcommand{\proj}[1]{\pi_{#1}}
+\newcommand{\projq}{\pi_?}
+
+% lattices
+\newcommand{\lub}{\sqcup}
+\newcommand{\ljoin}{\lub}
+\newcommand{\glb}{\sqcap}
+\newcommand{\lmeet}{\glb}
+\newcommand{\lat}{\textbf{Lat}}
+
+% products
+\newcommand{\fst}{\mathsf{fst}}
+\newcommand{\snd}{\mathsf{snd}}
+\makeatletter
+\newsavebox{\@brx}
+\newcommand{\llangle}[1][]{\savebox{\@brx}{\(\m@th{#1\langle}\)}%
+  \mathopen{\copy\@brx\kern-0.5\wd\@brx\usebox{\@brx}}}
+\newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}%
+  \mathclose{\copy\@brx\kern-0.5\wd\@brx\usebox{\@brx}}}
+\makeatother
+
+% coproducts
+\newcommand{\inl}[1]{\mathsf{inl(#1)}}
+\newcommand{\inr}[1]{\mathsf{inr(#1)}}
+  
+% functions
+\newcommand{\restr}[2]{{#1}\ |\ {#2}}
+
+% natural numbers
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\nats}[1]{\nat_{#1}}
+\newcommand{\lcm}[2]{\mf{LCM}(#1,#2)}
+\newcommand{\mx}[2]{\mf{max}(#1,#2)}
+
+% vectors and tuples
+\newcommand{\vect}[2]{\textbf{#1}^{#2}}
+
+% legacy
+\newcommand{\djf}{\oplus}
+\newcommand{\ndjf}{\oslash}
+\newcommand{\comborder}{<}
+\NewDocumentCommand\torder{oo}{%
+    {\leq\IfValueT{#1}{^{#1}}\IfValueT{#2}{_{#2}}}%
+}

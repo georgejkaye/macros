@@ -1,0 +1,38 @@
+% REQUIRES tikz
+
+\newsavebox{\pullbackl}
+\sbox\pullbackl{%
+\begin{tikzpicture}%
+\draw (0,0) -- (1ex,0ex);%
+\draw (1ex,0ex) -- (1ex,1ex);%
+\end{tikzpicture}}
+\newsavebox{\pullbackr}
+\sbox\pullbackr{%
+\begin{tikzpicture}%
+\draw (0,0) -- (1ex,0ex);%
+\draw (0ex,0ex) -- (0ex,1ex);%
+\end{tikzpicture}}
+\newsavebox{\pushoutr}
+\sbox\pushoutr{%
+\begin{tikzpicture}%
+\draw (1ex,1ex) -- (0ex,1ex);%
+\draw (0ex,1ex) -- (0,0);%
+\end{tikzpicture}}
+\newsavebox{\pushoutl}
+\sbox\pushoutl{%
+\begin{tikzpicture}%
+\draw (1ex,1ex) -- (0ex,1ex);%
+\draw (1ex,1ex) -- (1ex,0);%
+\end{tikzpicture}}
+\newsavebox{\pullbackd}
+\sbox\pullbackd{%
+\begin{tikzpicture}%
+\draw (-1ex,2ex) -- (0ex,1ex);%
+\draw (0em, 1ex) -- (1ex,2ex);%
+\end{tikzpicture}}
+\newsavebox{\pushoutu}
+\sbox\pushoutu{%
+\begin{tikzpicture}%
+\draw (-1ex,0ex) -- (0ex,1ex);%
+\draw (0em, 1ex) -- (1ex,0);%
+\end{tikzpicture}}

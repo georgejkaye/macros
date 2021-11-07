@@ -1,0 +1,145 @@
+% DEPENDENCIES: macros/category
+
+% equivariance
+\newcommand{\atoms}{\mathbb{A}}
+\newcommand{\permaction}{\odot}
+\newcommand{\rename}{\mathbin{\tau}}
+\newcommand{\renameinv}{\rename^{-1}}
+
+% graph definition
+\newcommand{\vertices}{V}
+\newcommand{\edges}{E}
+\NewDocumentCommand\esources{oo}{%
+    \mf{s}\IfValueT{#2}{_#2}\IfValueT{#1}{[#1]}%
+}
+\NewDocumentCommand\etargets{oo}{%
+    \mf{t}\IfValueT{#2}{_#2}\IfValueT{#1}{[#1]}%
+}
+\newcommand{\labels}{\Lambda}
+\newcommand{\elabels}{\labels^{\edges}}
+\newcommand{\vlabels}{\labels^{\vertices}}
+
+\newcommand{\inputs}[2][{}]{\mf{in}^{#1}(#2)}
+\newcommand{\outputs}[2][{}]{\mf{out}^{#1}(#2)}
+\newcommand{\ind}[1]{\mf{in}(#1)}
+\newcommand{\oud}[1]{\mf{out}(#1)}
+\newcommand{\inds}[1]{\mf{in}^\star(#1)}
+\newcommand{\ouds}[1]{\mf{out}^\star(#1)}
+\newcommand{\io}[1]{\mf{io}(#1)}
+
+% categories of graphs
+
+
+\newcommand{\hyp}{\textbf{Hyp}}
+\newcommand{\shyp}{\textbf{SHyp}}
+\newcommand{\lhyp}{\textbf{LHyp}}
+\newcommand{\phyp}{\textbf{PHyp}}
+\newcommand{\ilhyp}{\textbf{LHyp}^{\interface}}
+\newcommand{\hypterm}{\textbf{HypTerm}}
+
+\newcommand{\labhyp}{\hyp_{\signature}}
+\newcommand{\lshyp}{\shyp_{\signature}}
+\newcommand{\llhyp}{\lhyp_{\signature}}
+\newcommand{\lilhyp}{\lhyp^{\interface}_{\signature}}
+\newcommand{\lphyp}{\phyp_{\signature}}
+\newcommand{\lhypterm}{\textbf{HypTerm}_{\signature}}
+
+\newcommand{\cspd}[1]{Csp_D(#1)}
+\newcommand{\mcspd}[1]{MCsp_D(#1)}
+\newcommand{\pmcspd}[1]{PMCsp_D(#1)}
+\newcommand{\lmcspd}[1]{LMCsp_D(#1)}
+\newcommand{\csplhyp}{\csp{\llhyp}}
+\newcommand{\cspdlhyp}{\cspd{\llhyp}}
+\newcommand{\mcspdlhyp}{\mcspd(\llhyp)}
+\newcommand{\cspdphyp}{\cspd{\lphyp}}
+\newcommand{\mcspdphyp}{\mcspd{\lphyp}}
+\newcommand{\pmcspdphyp}{\pmcspd{\lphyp}}
+\newcommand{\lmcspdphyp}{\lmcspd{\labhyp}}
+
+\newcommand{\ghyp}{\textbf{Hyp}_{\signature,\sorts}}
+\newcommand{\gshyp}{\textbf{SHyp}_{\signature,\sorts}}
+\newcommand{\glhyp}{\textbf{LHyp}_{\signature,\sorts}}
+\newcommand{\gilhyp}{\textbf{LHyp}^{\interface}_{\signature,\sorts}}
+\newcommand{\ghypterm}{\textbf{HypTerm}_{\signature,\sorts}}
+
+% hypergraph soundness
+\newcommand{\hypfun}[1]{\llbracket#1\rrbracket}
+\newcommand{\hypfunsig}[2]{\hypfun{#1}_#2}
+
+% hypergraph completeness
+\NewDocumentCommand\term{ooo}{%
+    \llangle\IfValueTF{#1}{#1}{-}\rrangle\IfValueTF{#3}{_{#3,#2}}{\IfValueT{#2}{_{#2}}}%
+}
+\NewDocumentCommand\stack{ooo}{%
+    \mathsf{stack}\IfValueTF{#3}{_{#3,#2}}{\IfValueT{#2}{_{#2}}}\IfValueT{#1}{(#1)}%
+}
+\NewDocumentCommand\shuffle{ooo}{%
+    \mathsf{shuffle}\IfValueTF{#3}{_{#3,#2}}{\IfValueT{#2}{_{#2}}}\IfValueT{#1}{(#1)}%
+}
+
+% graph rewriting
+\newcommand{\deriv}[1]{\xRightarrow{#1}}
+\newcommand{\rewrite}{\Rightarrow}
+\newcommand{\grewrite}{\rightsquigarrow}
+\newcommand{\rrule}[2]{\langle #1,#2 \rangle}
+
+% LEGACY: 'interfaced' hypergraphs
+\newcommand{\idedges}{\edges^{\id}}
+\newcommand{\einput}{\alpha}
+\newcommand{\eoutput}{\omega}
+\newcommand{\interface}{\bullet}
+\NewDocumentCommand\vt{oo}{%
+    T\IfValueT{#2}{_#2}\IfValueT{#1}{[#1]}%
+}
+\NewDocumentCommand\vs{oo}{%
+    S\IfValueT{#2}{_#2}\IfValueT{#1}{[#1]}%
+}
+\newcommand{\vconnsr}{\kappa}
+\newcommand{\vconnsl}{\kappa^{-1}}
+\newcommand{\htrim}[1]{\lceil #1 \rceil}
+\newcommand{\hinter}[2]{\lfloor #1 \rfloor_#2}
+\newcommand{\siface}[1]{\ulcorner #1 \urcorner}
+\newcommand{\vtlabels}{\labels^{T}}
+\newcommand{\vslabels}{\labels^{S}}
+\newcommand{\vleft}{\lambda}                          % left 
+\newcommand{\vright}{\rho}                            % right
+
+\NewDocumentCommand\vtorder{o}{%
+    \torder[\vt][\IfValueT{#1}{#1}]%
+}
+\NewDocumentCommand\vsorder{o}{%
+    \torder[\vs][\IfValueT{#1}{#1}]%
+}
+
+\NewDocumentCommand\lhyper{o}{%
+(\vs\IfValueT{#1}{_#1}, \vt\IfValueT{#1}{_#1}, \edges\IfValueT{#1}{_#1}, \esources\IfValueT{#1}{_#1}, \etargets\IfValueT{#1}{_#1}, \vconnsr\IfValueT{#1}{_#1})%
+}
+
+\NewDocumentCommand\llhyper{o}{%
+(\vs\IfValueT{#1}{_#1}, \vt\IfValueT{#1}{_#1}, \edges\IfValueT{#1}{_#1}, \esources\IfValueT{#1}{_#1}, \etargets\IfValueT{#1}{_#1}, \vconnsr\IfValueT{#1}{_#1}, \labels\IfValueT{#1}{_#1})%
+}
+
+\NewDocumentCommand\lilhyper{o}{%
+(\edges\IfValueT{#1}{_#1}, \vs\IfValueT{#1}{_#1}, \vt\IfValueT{#1}{_#1}, \vconnsr\IfValueT{#1}{_#1}, \labels\IfValueT{#1}{_#1})%
+}
+
+\NewDocumentCommand\lilhypere{o}{%
+(\edges\IfValueT{#1}{_#1}, \edges\IfValueT{#1}{_#1}[\id], \vs\IfValueT{#1}{_#1}, \vt\IfValueT{#1}{_#1}, \vconnsr\IfValueT{#1}{_#1}, \labels\IfValueT{#1}{_#1})%
+}
+
+\newcommand{\hypers}{((\vt, \vtorder), (\vs, \vsorder), \edges, \inedges, \outedges, \vleft, \vright, \vconnsr, \labels)}
+
+\newcommand{\includehypergraph}[2][0.35]{{\includesvg[scale=#1]{#2}}}
+
+% equivalence maps
+\newcommand{\homo}{\rightsquigarrow}
+\newcommand{\hequiv}{\equiv_\mathsf{h}}
+\newcommand{\vmap}[1]{{#1}_V}
+\newcommand{\vmapm}[1]{{#1}_V}
+\newcommand{\vmaps}[1]{{#1}_S}
+\newcommand{\vmapss}[1]{{#1}_S^\mon}
+\newcommand{\vmapt}[1]{{#1}_T}
+\newcommand{\vmapts}[1]{{#1}_T^\mon}
+\newcommand{\emap}[1]{{#1}_E}
+
+\newcommand{\homeo}{\approx}

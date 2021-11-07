@@ -1,0 +1,46 @@
+% logic gates
+\newcommand{\nor}{{\downarrow}}
+\newcommand{\xor}{\oplus}
+
+% circuit morphisms
+\newcommand{\fork}{{\prec}}
+\newcommand{\join}{{\succ}}
+\newcommand{\stub}{{\wr}}
+\newcommand{\delay}{\delta}
+
+% categories of digital circuits
+\newcommand{\circc}{\textbf{Circ}}
+\newcommand{\circd}{\circc_{\delay}}
+\newcommand{\circdf}{\circd^{*}}
+\newcommand{\ccircd}{\textbf{C}\circd}
+\newcommand{\ccircdf}{\textbf{C}\circdf}
+
+% circuit signature
+\NewDocumentCommand\circsig{o}{%
+    \textbf{Circ}\IfValueT{#1}{_#1}%
+}
+% combinational circuits
+\NewDocumentCommand\ccirc{o}{%
+    \textbf{CCirc}\IfValueT{#1}{_#1}%
+}
+% closed combinational circuits 
+\NewDocumentCommand\cccirc{o}{%
+    \textbf{CCCirc}\IfValueT{#1}{_#1}%
+}
+% sequential circuits
+\NewDocumentCommand\scirc{o}{%
+    \textbf{SCirc}\IfValueT{#1}{_#1}%
+}
+% closed sequential circuits
+\NewDocumentCommand\cscirc{o}{%
+    \textbf{CSCirc}\IfValueT{#1}{_#1}%
+}
+
+
+\newcommand{\instval}[1]{\mf{hd}(#1)}
+\newcommand{\tail}[1]{\mf{tl}(#1)}
+\newcommand{\wavef}[1]{\mathcal{W}(#1)}
+
+\newcommand{\recur}[1]{%
+\langle#1\rangle
+}
