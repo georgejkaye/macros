@@ -52,9 +52,14 @@
 \NewDocumentCommand\tomm{o}{%
     \llbracket\IfValueTF{#1}{#1}{-}\rrbracket^{\mcs}%
 }
+\NewDocumentCommand\mmtot{o}{%
+    \llangle\IfValueTF{#1}{#1}{-}\rrangle^{\mcs}%
+}
+
 \NewDocumentCommand\tors{o}{%
     \gens(\IfValueTF{#1}{#1}{-})
 }
 \NewDocumentCommand\rstot{o}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle^{\mcs}%
 }
+
