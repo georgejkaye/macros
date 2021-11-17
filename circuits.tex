@@ -27,7 +27,11 @@
 \NewDocumentCommand\cccirc{o}{%
     \textbf{CCCirc}\IfValueT{#1}{_#1}%
 }
-% sequential circuits
+% circuits with delay (delay circuits)
+\NewDocumentCommand\dcirc{o}{%
+    \textbf{DCirc}\IfValueT{#1}{_#1}%
+}
+% circuits with feedback (sequential circuits)
 \NewDocumentCommand\scirc{o}{%
     \textbf{SCirc}\IfValueT{#1}{_#1}%
 }
