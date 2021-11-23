@@ -1,6 +1,6 @@
 
-\newcommand{\sinit}{\mathsf{i}}
-\newcommand{\sderv}{\mathsf{d}}
+\newcommand{\sinit}[1]{\mathsf{i}(#1)}
+\newcommand{\sderv}[1]{\mathsf{d}(#1)}
 \newcommand{\sfinit}[1]{#1[a]}
 \newcommand{\sfderv}[1]{#1_a}
 
@@ -64,4 +64,3 @@
 \NewDocumentCommand\rstot{o}{%
     \langle\IfValueTF{#1}{#1}{-}\rangle%
 }
-
