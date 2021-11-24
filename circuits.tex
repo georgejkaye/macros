@@ -19,6 +19,9 @@
 \NewDocumentCommand\circsig{o}{%
     \textbf{Circ}\IfValueT{#1}{_#1}%
 }
+
+\newcommand{\sigfunc}[1]{\overline{#1}}
+
 % combinational circuits
 \NewDocumentCommand\ccirc{o}{%
     \textbf{CCirc}\IfValueT{#1}{_#1}%
