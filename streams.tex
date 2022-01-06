@@ -42,13 +42,13 @@
 
 \newcommand{\cfprop}{\textbf{CFun}}
 \NewDocumentCommand\sprop{o}{%
-    \textbf{Stream}_{\IfValueTF{#1}{#1}}%
+    \textbf{Stream}_{\IfValueT{#1}{#1}}%
 }
 \NewDocumentCommand\csprop{o}{%
-    \textbf{CStream}_{\IfValueTF{#1}{#1}}%
+    \textbf{CStream}_{\IfValueT{#1}{#1}}%
 }
 \NewDocumentCommand\pcsprop{o}{%
-    \textbf{PCStream}_{\IfValueTF{#1}{#1}}%
+    \textbf{PCStream}_{\IfValueT{#1}{#1}}%
 }
 
 \NewDocumentCommand\tomm{o}{%
