@@ -60,8 +60,8 @@
     \llangle\IfValueTF{#1}{#1}{-}\rrangle%
 }
 
-\NewDocumentCommand\tors{o}{%
-    \gens(\IfValueTF{#1}{#1}{-})
+\NewDocumentCommand\tors{om}{%
+    [\IfValueTF{#1}{#1}{-}]_{#2}
 }
 \NewDocumentCommand\rstot{o}{%
     \langle\IfValueTF{#1}{#1}{-}\rangle%
