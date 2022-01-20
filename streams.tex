@@ -53,8 +53,8 @@
     \textbf{PCStream}_{\IfValueT{#1}{#1}}%
 }
 
-\NewDocumentCommand\tomm{o}{%
-    \llbracket\IfValueTF{#1}{#1}{-}\rrbracket%
+\NewDocumentCommand\tomm{om}{%
+    \llbracket\IfValueTF{#1}{#1}{-}\rrbracket_{#2}%
 }
 \NewDocumentCommand\mmtot{o}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle%
