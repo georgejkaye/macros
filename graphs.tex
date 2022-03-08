@@ -7,8 +7,9 @@
 \newcommand{\renameinv}{\rename^{-1}}
 
 % graph definition
-\newcommand{\vertices}{V}
-\newcommand{\edges}{E}
+\newcommand{\vertices}[1]{#1_\star}
+\newcommand{\fbvertices}[1]{#1_{\mathsf{fb}}}
+\newcommand{\edges}[3]{#1_{#2,#3}}
 \NewDocumentCommand\esources{oo}{%
     \mf{s}\IfValueT{#2}{_#2}\IfValueT{#1}{[#1]}%
 }
