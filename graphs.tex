@@ -64,8 +64,9 @@
 \newcommand{\ghypterm}{\textbf{HypTerm}_{\signature,\sorts}}
 
 % hypergraph soundness
-\newcommand{\hypfun}[1]{\llbracket#1\rrbracket}
-\newcommand{\hypfunsig}[2]{\hypfun{#1}_#2}
+\NewDocumentCommand\termtohyp{om}{%
+    \llbracket#2\rrbracket_{\IfValueT{#1}{#1}}
+}
 
 % hypergraph completeness
 \NewDocumentCommand\term{ooo}{%
@@ -144,3 +145,8 @@
 \newcommand{\emap}[1]{{#1}_E}
 
 \newcommand{\homeo}{\approx}
+
+% legacy
+
+\newcommand{\hypfun}[1]{\llbracket#1\rrbracket}
+\newcommand{\hypfunsig}[2]{\tohyp{#1}_#2}
