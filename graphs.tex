@@ -65,7 +65,7 @@
 
 % hypergraph soundness
 \NewDocumentCommand\termtohyp{om}{%
-    \llbracket#2\rrbracket_{\IfValueT{#1}{#1}}
+    \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{#2}
 }
 
 % hypergraph completeness
