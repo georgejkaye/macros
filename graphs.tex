@@ -10,23 +10,9 @@
 \newcommand{\vertices}[1]{#1_\star}
 \newcommand{\fbvertices}[1]{#1_{\mathsf{fb}}}
 \newcommand{\edges}[3]{#1_{#2,#3}}
-\NewDocumentCommand\esources{oo}{%
-    \mf{s}\IfValueT{#2}{_#2}\IfValueT{#1}{[#1]}%
-}
-\NewDocumentCommand\etargets{oo}{%
-    \mf{t}\IfValueT{#2}{_#2}\IfValueT{#1}{[#1]}%
-}
+\newcommand{\sources}[1]{\mathsf{s}_{#1}}
+\newcommand{\targets}[1]{\mathsf{t}_{#1}}
 \newcommand{\labels}{\Lambda}
-\newcommand{\elabels}{\labels^{\edges}}
-\newcommand{\vlabels}{\labels^{\vertices}}
-
-\newcommand{\inputs}[2][{}]{\mf{in}^{#1}(#2)}
-\newcommand{\outputs}[2][{}]{\mf{out}^{#1}(#2)}
-\newcommand{\ind}[1]{\mf{in}(#1)}
-\newcommand{\oud}[1]{\mf{out}(#1)}
-\newcommand{\inds}[1]{\mf{in}^\star(#1)}
-\newcommand{\ouds}[1]{\mf{out}^\star(#1)}
-\newcommand{\io}[1]{\mf{io}(#1)}
 
 % categories of graphs
 
@@ -150,3 +136,12 @@
 
 \newcommand{\hypfun}[1]{\llbracket#1\rrbracket}
 \newcommand{\hypfunsig}[2]{\tohyp{#1}_#2}
+\newcommand{\inputs}[2][{}]{\mf{in}^{#1}(#2)}
+\newcommand{\outputs}[2][{}]{\mf{out}^{#1}(#2)}
+\newcommand{\ind}[1]{\mf{in}(#1)}
+\newcommand{\oud}[1]{\mf{out}(#1)}
+\newcommand{\inds}[1]{\mf{in}^\star(#1)}
+\newcommand{\ouds}[1]{\mf{out}^\star(#1)}
+\newcommand{\io}[1]{\mf{io}(#1)}
+\newcommand{\elabels}{\labels^{\edges}}
+\newcommand{\vlabels}{\labels^{\vertices}}
