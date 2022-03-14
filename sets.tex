@@ -24,9 +24,13 @@
 \makeatother
 
 % coproducts
-\newcommand{\inl}[1]{\mathsf{inl(#1)}}
-\newcommand{\inr}[1]{\mathsf{inr(#1)}}
-  
+\NewDocumentCommand\inl{o}{%
+    \mathsf{inl}\IfValueT{#1}{(#1)}
+}
+\NewDocumentCommand\inr{o}{%
+    \mathsf{inr}\IfValueT{#1}{(#1)}
+}
+
 % functions
 \newcommand{\restr}[2]{{#1}\ |\ {#2}}
 
