@@ -1,3 +1,6 @@
+% function category
+\newcommand{\funci}[1]{\mathbf{Func}_{#1}}
+
 
 \newcommand{\sinit}[1]{\mathsf{i}(#1)}
 \newcommand{\sderv}[1]{\mathsf{d}(#1)}
@@ -25,7 +28,7 @@
 \newcommand{\varn}[1]{x^\nat_{#1}}
 \newcommand{\varz}[1]{x_{#1}}
 \newcommand{\outp}[2]{O^{#1}_{#2}}
-\newcommand{\stateset}[3]{\textbf{#1}^{#2}_{#3}}
+\newcommand{\stateset}[3]{\mathbf{#1}^{#2}_{#3}}
 \newcommand{\lifetime}[1]{\mf{life}(#1)}
 \newcommand{\reg}[1]{v_{#1}}
 \newcommand{\prefix}{r}
@@ -35,23 +38,23 @@
 \newcommand{\statestr}{\sigma}
 \newcommand{\canonstr}{\sigma}
 
-\newcommand{\mealy}[1]{\textbf{Mealy}_{#1}}
-\newcommand{\smealy}[1]{\textbf{SMealy}_{#1}}
+\newcommand{\mealy}[1]{\mathbf{Mealy}_{#1}}
+\newcommand{\smealy}[1]{\mathbf{SMealy}_{#1}}
 \newcommand{\fhom}{{!}}
 \newcommand{\ftom}[1]{\llangle#1\rrangle}
 
 
 \newcommand{\gens}{\nu}
 
-\newcommand{\cfprop}{\textbf{CFun}}
+\newcommand{\cfprop}{\mathbf{CFun}}
 \NewDocumentCommand\sprop{o}{%
-    \textbf{Stream}_{\IfValueT{#1}{#1}}%
+    \mathbf{Stream}_{\IfValueT{#1}{#1}}%
 }
 \NewDocumentCommand\csprop{o}{%
-    \textbf{CStream}_{\IfValueT{#1}{#1}}%
+    \mathbf{CStream}_{\IfValueT{#1}{#1}}%
 }
 \NewDocumentCommand\pcsprop{o}{%
-    \textbf{PCStream}_{\IfValueT{#1}{#1}}%
+    \mathbf{PCStream}_{\IfValueT{#1}{#1}}%
 }
 
 \NewDocumentCommand\tomm{om}{%
