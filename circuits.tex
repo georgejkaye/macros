@@ -1,6 +1,6 @@
 % values
 \newcommand{\values}{\mathbf{V}}
-\newcommand{\valuetuple}[1]{\tuple{\values}{#1}}
+\newcommand{\valuetuple}[1]{\tupletype{\values}{#1}}
 
 % logic gates
 \newcommand{\nor}{{\downarrow}}
@@ -28,7 +28,7 @@
 \newcommand{\interpretation}{\mathcal{I}}
 \newcommand{\valueinterpretation}{\interpretation_{\mathcal{V}}}
 \newcommand{\gateinterpretation}{\interpretation_{\mathcal{G}}}
-
+\newcommand{\gatefunction}[1]{\overline{#1}}
 
 % combinational circuits
 \NewDocumentCommand\ccirc{o}{%

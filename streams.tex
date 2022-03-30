@@ -2,14 +2,20 @@
 \newcommand{\funci}[1]{\mathbf{Func}_{#1}}
 
 % mealy machines
-\newcommand{\mealyoutput}[2]{#1[#2]}
-\newcommand{\mealytransition}[2]{#1_{#2}}
-\newcommand{\vmealy}[3]{#1~\xrightarrow{#2}~#3}
+\NewDocumentCommand\mealyoutput{omm}{
+    #2[{#3}]\IfValueT{#1}{^{#1}}
+}
+\NewDocumentCommand\mealytransition{omm}{
+    \IfValueT{#1}{(}{#2_{#3}}\IfValueT{#1}{)^{#1}}
+}
+\newcommand{\mealytype}[3]{{#1 \xrightarrow{#2} #3}}
+\NewDocumentCommand\mealyinitial{o}{
+    s_0\IfValueT{#1}{^{#1}}
+}
 
-\newcommand{\sinit}[1]{\mathsf{i}(#1)}
-\newcommand{\sderv}[1]{\mathsf{d}(#1)}
-\newcommand{\sfinit}[1]{#1[a]}
-\newcommand{\sfderv}[1]{#1_a}
+\newcommand{\streaminit}[1]{\mathsf{i}(#1)}
+\newcommand{\streamcons}{\mathbin{::}}
+\newcommand{\streamderv}[1]{\mathsf{d}(#1)}
 
 \newcommand{\stream}[1]{#1^{\omega}}
 
@@ -27,7 +33,6 @@
 \newcommand{\stcmp}{\triangleright}
 \newcommand{\stten}{+}
 \newcommand{\auto}[4]{#1~:~#2~\xrightarrow{#3}~#4}
-\newcommand{\vmealy}[3]{#1~\xrightarrow{#2}~#3}
 \newcommand{\variable}[2]{x^{#1}_{#2}}
 \newcommand{\varn}[1]{x^\nat_{#1}}
 \newcommand{\varz}[1]{x_{#1}}
@@ -61,16 +66,26 @@
     \mathbf{PCStream}_{\IfValueT{#1}{#1}}%
 }
 
-\NewDocumentCommand\tomm{om}{%
+
+\NewDocumentCommand\circuittostream{om}{%
+    [\IfValueTF{#1}{#1}{-}]_{#2}
+}
+\NewDocumentCommand\circuittomealy{om}{%
     \llbracket\IfValueTF{#1}{#1}{-}\rrbracket_{#2}%
 }
+\NewDocumentCommand\mealytostream{o}{%
+    {!\IfValueTF{#1}{#1}{(-)}}%
+}
+\NewDocumentCommand\mealytocircuit{om}{%
+    \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
+}
+
+
 \NewDocumentCommand\mmtot{om}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
 }
 
-\NewDocumentCommand\tors{om}{%
-    [\IfValueTF{#1}{#1}{-}]_{#2}
-}
+
 \NewDocumentCommand\rstot{o}{%
     \langle\IfValueTF{#1}{#1}{-}\rangle%
 }
