@@ -3,10 +3,10 @@
 
 % mealy machines
 \NewDocumentCommand\mealyoutput{omm}{
-    #2[{#3}]\IfValueT{#1}{^{#1}}
+    {#2}[{#3}]\IfValueT{#1}{^{#1}}
 }
 \NewDocumentCommand\mealytransition{omm}{
-    \IfValueT{#1}{(}{#2_{#3}}\IfValueT{#1}{)^{#1}}
+    \IfValueT{#1}{(}{{#2}_{#3}}\IfValueT{#1}{)^{#1}}
 }
 \newcommand{\mealytype}[3]{{#1 \xrightarrow{#2} #3}}
 \NewDocumentCommand\mealyinitial{o}{
