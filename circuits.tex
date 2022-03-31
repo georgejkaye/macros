@@ -1,6 +1,6 @@
 % values
 \newcommand{\values}{\mathbf{V}}
-\newcommand{\valuetuple}[1]{\tupletype{\values}{#1}}
+\newcommand{\valuetuple}[1]{\tuple{\values}{#1}}
 
 % logic gates
 \newcommand{\nor}{{\downarrow}}
@@ -31,26 +31,17 @@
 \newcommand{\gatefunction}[1]{\overline{#1}}
 
 % combinational circuits
-\NewDocumentCommand\ccirc{o}{%
-    \mathbf{CCirc}\IfValueT{#1}{_#1}%
-}
-% closed combinational circuits 
-\NewDocumentCommand\cccirc{o}{%
-    \mathbf{CCCirc}\IfValueT{#1}{_#1}%
-}
+\newcommand{\ccirc}[1]{\mathbf{CCirc}_{#1}}
+\newcommand{\ccircsigma}{\ccirc{\Sigma}}
 % circuits with delay (temporal circuits)
-\NewDocumentCommand\tcirc{o}{%
-    \mathbf{TCirc}\IfValueT{#1}{_#1}%
-}
+\newcommand{\tcirc}[1]{\mathbf{TCirc}_{#1}}
+\newcommand{\tcircsigma}{\tcirc{\Sigma}}
 % circuits with feedback (sequential circuits)
-\NewDocumentCommand\scirc{o}{%
-    \mathbf{SCirc}\IfValueT{#1}{_#1}%
-}
-% closed sequential circuits
-\NewDocumentCommand\cscirc{o}{%
-    \mathbf{CSCirc}\IfValueT{#1}{_#1}%
-}
-
+\newcommand{\scirc}[1]{\mathbf{SCirc}_{#1}}
+\newcommand{\scircsigma}{\scirc{\Sigma}}
+% sequential circuits quotiented by extensional equivalence
+\newcommand{\eescirc}[2]{\mathbf{SCirc}_{#1,#2}}
+\newcommand{\eescircsigmai}{\eescirc{\Sigma}{\interpretation}}
 
 \newcommand{\instval}[1]{\mf{hd}(#1)}
 \newcommand{\tail}[1]{\mf{tl}(#1)}
@@ -65,4 +56,3 @@
 \newcommand{\rw}[1]{=_{#1}}
 \newcommand{\rws}[1]{=_{#1}}
 \newcommand{\eequiv}[1]{\approx_{#1}}
-\newcommand{\eescirc}[2]{\mathbf{SCirc}_{#1,#2}}

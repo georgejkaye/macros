@@ -18,14 +18,19 @@
 \newcommand{\streamderv}[1]{\mathsf{d}(#1)}
 
 \newcommand{\stream}[1]{#1^{\omega}}
+\newcommand{\causalstreamfuncorder}{\preceq}
 
-\newcommand{\autom}{M}
-\newcommand{\auton}{N}
-\newcommand{\autos}{S}
-\newcommand{\autot}{T}
-\newcommand{\autoo}{O}
+\newcommand{\stateassignment}{\gamma}
 
-\newcommand{\lauto}[2]{(#2, \langle \autot_{#1},\autoo_{#1} \rangle)}
+\newcommand{\approximant}[2]{#1_{#2}}
+
+% categories
+\newcommand{\streamv}{\mathbf{Stream}_{\values}}
+
+\newcommand{\mealyi}{\mathbf{Mealy}_{\interpretation}}
+
+\newcommand{\cstream}[1]{\mathbf{CStream}_{#1}}
+\newcommand{\cstreami}{\mathbf{CStream}_{\interpretation}}
 
 \newcommand{\trs}[2]{#1 \,|\, #2}
 
@@ -56,12 +61,6 @@
 \newcommand{\gens}{\nu}
 
 \newcommand{\cfprop}{\mathbf{CFun}}
-\NewDocumentCommand\sprop{o}{%
-    \mathbf{Stream}_{\IfValueT{#1}{#1}}%
-}
-\NewDocumentCommand\csprop{o}{%
-    \mathbf{CStream}_{\IfValueT{#1}{#1}}%
-}
 \NewDocumentCommand\pcsprop{o}{%
     \mathbf{PCStream}_{\IfValueT{#1}{#1}}%
 }
@@ -79,18 +78,13 @@
 \NewDocumentCommand\mealytocircuit{om}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
 }
+\NewDocumentCommand\streamtomealy{om}{%
+    \langle\IfValueTF{#1}{#1}{-}\rangle_{#2}%
+}
 
 
 \NewDocumentCommand\mmtot{om}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
-}
-
-
-\NewDocumentCommand\rstot{o}{%
-    \langle\IfValueTF{#1}{#1}{-}\rangle%
-}
-\NewDocumentCommand\rstomm{om}{%
-    \langle\IfValueTF{#1}{#1}{-}\rangle_{#2}%
 }
 
 \newcommand{\stateorder}{\preceq}
