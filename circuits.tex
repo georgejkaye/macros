@@ -1,6 +1,13 @@
+% signature
+\newcommand{\circuitsignature}{\Sigma}
+\newcommand{\circuitsignaturevalues}{\mathcal{V}}
+\newcommand{\circuitsignaturegates}{\mathcal{G}}
+
 % values
 \newcommand{\values}{\mathbf{V}}
 \newcommand{\valuetuple}[1]{\tuple{\values}{#1}}
+\newcommand{\valuetrue}{\mathsf{t}}
+\newcommand{\valuefalse}{\mathsf{f}}
 
 % logic gates
 \newcommand{\nor}{{\downarrow}}
@@ -19,12 +26,8 @@
 \newcommand{\ccircd}{\mathbf{C}\circd}
 \newcommand{\ccircdf}{\mathbf{C}\circdf}
 
-% circuit signature
-\NewDocumentCommand\circsig{o}{%
-    \mathbf{Circ}\IfValueT{#1}{_#1}%
-}
+% interpretation
 
-\newcommand{\sigfunc}[1]{\overline{#1}}
 \newcommand{\interpretation}{\mathcal{I}}
 \newcommand{\valueinterpretation}{\interpretation_{\mathcal{V}}}
 \newcommand{\gateinterpretation}{\interpretation_{\mathcal{G}}}

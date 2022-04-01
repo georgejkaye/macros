@@ -1,5 +1,6 @@
 % function category
-\newcommand{\funci}[1]{\mathbf{Func}_{#1}}
+\newcommand{\func}[1]{\mathbf{Func}_{#1}}
+\newcommand{\funci}{\func{\interpretation}}
 
 % mealy machines
 \NewDocumentCommand\mealyoutput{omm}{
@@ -13,9 +14,9 @@
     s_0\IfValueT{#1}{^{#1}}
 }
 
-\newcommand{\streaminit}[1]{\mathsf{i}(#1)}
+\NewDocumentCommand\streaminit{o}{\mathsf{i}\IfValueT{#1}{(#1)}}
+\NewDocumentCommand\streamderv{o}{\mathsf{d}\IfValueT{#1}{(#1)}}
 \newcommand{\streamcons}{\mathbin{::}}
-\newcommand{\streamderv}[1]{\mathsf{d}(#1)}
 
 \newcommand{\stream}[1]{#1^{\omega}}
 \newcommand{\causalstreamfuncorder}{\preceq}
