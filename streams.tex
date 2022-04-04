@@ -11,7 +11,7 @@
 }
 \newcommand{\mealytype}[3]{{#1 \xrightarrow{#2} #3}}
 \NewDocumentCommand\mealyinitial{o}{
-    s_0\IfValueT{#1}{^{#1}}
+    \bar{s}\IfValueT{#1}{^{#1}}
 }
 
 \NewDocumentCommand\streaminit{o}{\mathsf{i}\IfValueT{#1}{(#1)}}
@@ -78,6 +78,9 @@
 }
 \NewDocumentCommand\mealytocircuit{om}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
+}
+\NewDocumentCommand\mealytocircuiti{o}{%
+    \llangle\IfValueTF{#1}{#1}{-}\rrangle_{\interpretation}%
 }
 \NewDocumentCommand\streamtomealy{om}{%
     \langle\IfValueTF{#1}{#1}{-}\rangle_{#2}%
