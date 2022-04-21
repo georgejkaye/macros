@@ -39,8 +39,10 @@
 % circuits with feedback (sequential circuits)
 \newcommand{\scirc}[1]{\mathbf{SCirc}_{#1}}
 \newcommand{\scircsigma}{\scirc{\Sigma}}
-% sequential circuits quotiented by extensional equivalence
-\newcommand{\scirci}{\scirc{\interpretation}}
+
+% sequential circuits quotiented over some interpretation
+\newcommand{\scircq}[2]{\mathbf{SCirc}_{#1,#2}}
+\newcommand{\scircsigmai}{\scircq{\Sigma}{\interpretation}}
 
 \newcommand{\instval}[1]{\mf{hd}(#1)}
 \newcommand{\tail}[1]{\mf{tl}(#1)}
