@@ -68,10 +68,10 @@
 
 
 \NewDocumentCommand\circuittostream{om}{%
-    [\IfValueTF{#1}{#1}{-}]_{#2}
+    \left[\IfValueTF{#1}{#1}{-}\right]_{#2}
 }
 \NewDocumentCommand\circuittomealy{om}{%
-    \llbracket\IfValueTF{#1}{#1}{-}\rrbracket_{#2}%
+    \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket_{#2}%
 }
 \NewDocumentCommand\mealytostream{o}{%
     {!\IfValueTF{#1}{#1}{(-)}}%
@@ -83,12 +83,7 @@
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{\interpretation}%
 }
 \NewDocumentCommand\streamtomealy{om}{%
-    \langle\IfValueTF{#1}{#1}{-}\rangle_{#2}%
-}
-
-
-\NewDocumentCommand\mmtot{om}{%
-    \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
+    \left\langle\IfValueTF{#1}{#1}{-}\right\rangle_{#2}%
 }
 
 \newcommand{\stateorder}{\preceq}
