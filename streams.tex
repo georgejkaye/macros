@@ -26,7 +26,9 @@
 \newcommand{\approximant}[2]{#1_{#2}}
 
 % categories of stream functions
-\newcommand{\streamv}{\mathbf{Stream}_{\values}}
+\newcommand{\streamc}[1]{\mathbf{Stream}_{#1}}
+\newcommand{\streamv}{\streamc{\values}}
+\newcommand{\streami}{\streamc{\interpretation}}
 \newcommand{\cstream}[1]{\mathbf{CStream}_{#1}}
 \newcommand{\cstreami}{\cstream{\interpretation}}
 \newcommand{\fcstream}[1]{\mathbf{FCStream}_{#1}}
