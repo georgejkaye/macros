@@ -51,12 +51,13 @@
 
 % equational reasoning
 \newcommand{\equations}[1]{\mathcal{E}_{#1}}
-\newcommand{\commcomonoid}{\equations{CC}}
-\newcommand{\commmonoid}{\equations{CM}}
-\newcommand{\bialgebra}{\equations{B}}
-\newcommand{\cartesiannat}{\equations{N}}
-\newcommand{\closedcombequations}{\equations{C}}
-\newcommand{\delayequations}{\equations{D}}
+\newcommand{\commcomonoid}{CC}
+\newcommand{\commmonoid}{CM}
+\newcommand{\bialgebra}{\mathcal{B}}
+\newcommand{\cartesiannat}{\mathcal{N}}
+\newcommand{\closedcombequations}{\mathcal{C}}
+\newcommand{\delayequations}{\mathcal{D}}
+\newcommand{\tracefreeequations}{\mathcal{F}}
 
 \newcommand{\instval}[1]{\mf{hd}(#1)}
 \newcommand{\tail}[1]{\mf{tl}(#1)}
@@ -68,5 +69,7 @@
 \newcommand{\sassg}{\Gamma}
 
 \newcommand{\ginterp}[1]{\llbracket{#1}\rrbracket}
-\newcommand{\eqaxioms}[1]{=_{#1}}
+\NewDocumentCommand\eqaxioms{om}{%
+    \IfValueTF{#1}{\stackrel{#1}{=}}{=_{#2}}
+}
 \newcommand{\eqaxiomsc}{\eqaxioms{\mathcal{C}}}
