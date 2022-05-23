@@ -21,7 +21,9 @@
 
 % cospan bicategories of hypergraphs
 
+\newcommand{\cspdhyp}{\mathsf{Csp}_{D}(\labhyp)}
 \newcommand{\cspfihyp}{\mathsf{Csp}_{FI}(\labhyp)}
+\newcommand{\macspdhyp}{\mathsf{MACsp}_{D}(\labhyp)}
 \newcommand{\macspfihyp}{\mathsf{MACsp}_{FI}(\labhyp)}
 \newcommand{\smcspfihyp}{\mathsf{SMCsp}_{FI}(\labhyp)}
 \newcommand{\lsmcspfihyp}{\mathsf{LSMCsp}_{FI}(\labhyp)}
@@ -31,6 +33,19 @@
 \NewDocumentCommand\termtohyp{om}{%
     \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{#2}
 }
+\NewDocumentCommand\frobtohyp{o}{%
+    [{\IfValueTF{#1}{#1}{-}}]
+}
+\NewDocumentCommand\termandfrobtohyp{om}{%
+    \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{#2}
+}
+\NewDocumentCommand\termtohypsigma{o}{%
+    \termtohyp[\IfValueTF{#1}{#1}{-}]{\Sigma}
+}
+\NewDocumentCommand\termandfrobtohypsigma{o}{%
+    \termandfrobtohyp[\IfValueTF{#1}{#1}{-}]{\Sigma}
+}
+
 
 % hypergraph completeness
 \NewDocumentCommand\term{ooo}{%
