@@ -23,8 +23,9 @@
 }
 \newcommand{\braid}[2]{{\gamma_{#1,#2}}}
 \newcommand{\swap}[2]{{\sigma_{#1,#2}}}
-\newcommand{\trace}[2]{{\text{Tr}^{#1}(#2)}}
-\newcommand{\vtrace}[4]{{\text{Tr}^{#1}_{#2,#3}(#4)}}
+\DeclareMathOperator{\tr}{Tr}
+\newcommand{\trace}[2]{{\tr^{#1}(#2)}}
+\newcommand{\vtrace}[4]{{\tr^{#1}_{#2,#3}(#4)}}
 \newcommand{\mon}{\star}
 
 \NewDocumentCommand\iter{om}{%
