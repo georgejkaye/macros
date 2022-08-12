@@ -29,6 +29,14 @@
 \newcommand{\lsmcspfihyp}{\mathsf{LSMCsp}_{FI}(\labhyp)}
 \newcommand{\rsmcspfihyp}{\mathsf{RSMCsp}_{FI}(\labhyp)}
 
+% paths
+\newcommand{\vpath}[2]{(#1, #2)}
+\newcommand{\tracepath}[2]{(#1, #2)}
+\newcommand{\tracerelation}{\sim}
+\newcommand{\tracerelated}[2]{\tracerelation_{(#1,#2)}}
+\newcommand{\tracerelclass}[3]{[#1]^{\sim}_{#2,#3}}
+\newcommand{\tracerelclassfg}[1]{\tracerelclass{#1}{f}{g}}
+
 % hypergraph soundness
 \NewDocumentCommand\termtohyp{om}{%
     \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{#2}
@@ -133,7 +141,7 @@
 \newcommand{\siface}[1]{\ulcorner #1 \urcorner}
 \newcommand{\vtlabels}{\labels^{T}}
 \newcommand{\vslabels}{\labels^{S}}
-\newcommand{\vleft}{\lambda}                          % left 
+\newcommand{\vleft}{\lambda}                          % left
 \newcommand{\vright}{\rho}                            % right
 \NewDocumentCommand\vtorder{o}{%
     \torder[\vt][\IfValueT{#1}{#1}]%
