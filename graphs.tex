@@ -17,25 +17,20 @@
 % categories of hypergraphs
 
 \newcommand{\hyp}{\mathbf{Hyp}}
-\newcommand{\labhyp}{\hyp_{\signature}}
+\newcommand{\hypsigma}{\hyp_{\signature}}
 
 % cospan bicategories of hypergraphs
 
-\newcommand{\cspdhyp}{\mathsf{Csp}_{D}(\labhyp)}
-\newcommand{\cspfihyp}{\mathsf{Csp}_{FI}(\labhyp)}
-\newcommand{\macspdhyp}{\mathsf{MACsp}_{D}(\labhyp)}
-\newcommand{\macspfihyp}{\mathsf{MACsp}_{FI}(\labhyp)}
-\newcommand{\smcspfihyp}{\mathsf{SMCsp}_{FI}(\labhyp)}
-\newcommand{\lsmcspfihyp}{\mathsf{LSMCsp}_{FI}(\labhyp)}
-\newcommand{\rsmcspfihyp}{\mathsf{RSMCsp}_{FI}(\labhyp)}
+\newcommand{\cspdhyp}{\mathsf{Csp}_{D}(\hypsigma)}
+\newcommand{\cspfihyp}{\mathsf{Csp}_{FI}(\hypsigma)}
+\newcommand{\macspdhyp}{\mathsf{MACsp}_{D}(\hypsigma)}
+\newcommand{\macspfihyp}{\mathsf{MACsp}_{FI}(\hypsigma)}
+\newcommand{\smcspfihyp}{\mathsf{SMCsp}_{FI}(\hypsigma)}
+\newcommand{\lsmcspfihyp}{\mathsf{LSMCsp}_{FI}(\hypsigma)}
+\newcommand{\rsmcspfihyp}{\mathsf{RSMCsp}_{FI}(\hypsigma)}
 
 % paths
 \newcommand{\vpath}[2]{#1 \rightsquigarrow #2}
-\newcommand{\tracepath}[2]{(#1, #2)}
-\newcommand{\tracerelation}{\sim}
-\newcommand{\tracerelated}[2]{\tracerelation_{(#1,#2)}}
-\newcommand{\tracerelclass}[3]{[#1]^{\sim}_{#2,#3}}
-\newcommand{\tracerelclassfg}[1]{\tracerelclass{#1}{f}{g}}
 
 % hypergraph soundness
 \NewDocumentCommand\termtohyp{om}{%
@@ -52,18 +47,6 @@
 }
 \NewDocumentCommand\termandfrobtohypsigma{o}{%
     \termandfrobtohyp[\IfValueTF{#1}{#1}{-}]{\Sigma}
-}
-
-
-% hypergraph completeness
-\NewDocumentCommand\term{ooo}{%
-    \llangle\IfValueTF{#1}{#1}{-}\rrangle\IfValueTF{#3}{_{#3,#2}}{\IfValueT{#2}{_{#2}}}%
-}
-\NewDocumentCommand\stack{ooo}{%
-    \mathsf{stack}\IfValueTF{#3}{_{#3,#2}}{\IfValueT{#2}{_{#2}}}\IfValueT{#1}{(#1)}%
-}
-\NewDocumentCommand\shuffle{ooo}{%
-    \mathsf{shuffle}\IfValueTF{#3}{_{#3,#2}}{\IfValueT{#2}{_{#2}}}\IfValueT{#1}{(#1)}%
 }
 
 % graph rewriting
@@ -84,82 +67,3 @@
 \newcommand{\emap}[1]{{#1}_E}
 
 \newcommand{\homeo}{\approx}
-
-% legacy
-
-\newcommand{\hypfun}[1]{\llbracket#1\rrbracket}
-\newcommand{\hypfunsig}[2]{\tohyp{#1}_#2}
-\newcommand{\inputs}[2][{}]{\mf{in}^{#1}(#2)}
-\newcommand{\outputs}[2][{}]{\mf{out}^{#1}(#2)}
-\newcommand{\ind}[1]{\mf{in}(#1)}
-\newcommand{\oud}[1]{\mf{out}(#1)}
-\newcommand{\inds}[1]{\mf{in}^\star(#1)}
-\newcommand{\ouds}[1]{\mf{out}^\star(#1)}
-\newcommand{\io}[1]{\mf{io}(#1)}
-\newcommand{\elabels}{\labels^{\edges}}
-\newcommand{\vlabels}{\labels^{\vertices}}
-\newcommand{\shyp}{\mathbf{SHyp}}
-\newcommand{\lhyp}{\mathbf{LHyp}}
-\newcommand{\phyp}{\mathbf{PHyp}}
-\newcommand{\ilhyp}{\mathbf{LHyp}^{\interface}}
-\newcommand{\hypterm}{\mathbf{HypTerm}}
-\newcommand{\lshyp}{\shyp_{\signature}}
-\newcommand{\llhyp}{\lhyp_{\signature}}
-\newcommand{\lilhyp}{\lhyp^{\interface}_{\signature}}
-\newcommand{\lphyp}{\phyp_{\signature}}
-\newcommand{\lhypterm}{\mathbf{HypTerm}_{\signature}}
-\newcommand{\cspd}[1]{Csp_D(#1)}
-\newcommand{\mcspd}[1]{MCsp_D(#1)}
-\newcommand{\pmcspd}[1]{PMCsp_D(#1)}
-\newcommand{\lmcspd}[1]{LMCsp_D(#1)}
-\newcommand{\csplhyp}{\csp{\llhyp}}
-\newcommand{\cspdlhyp}{\cspd{\llhyp}}
-\newcommand{\mcspdlhyp}{\mcspd(\llhyp)}
-\newcommand{\cspdphyp}{\cspd{\lphyp}}
-\newcommand{\mcspdphyp}{\mcspd{\lphyp}}
-\newcommand{\pmcspdphyp}{\pmcspd{\lphyp}}
-\newcommand{\lmcspdphyp}{\lmcspd{\labhyp}}
-\newcommand{\ghyp}{\mathbf{Hyp}_{\signature,\sorts}}
-\newcommand{\gshyp}{\mathbf{SHyp}_{\signature,\sorts}}
-\newcommand{\glhyp}{\mathbf{LHyp}_{\signature,\sorts}}
-\newcommand{\gilhyp}{\mathbf{LHyp}^{\interface}_{\signature,\sorts}}
-\newcommand{\ghypterm}{\mathbf{HypTerm}_{\signature,\sorts}}
-\newcommand{\idedges}{\edges^{\id}}
-\newcommand{\einput}{\alpha}
-\newcommand{\eoutput}{\omega}
-\newcommand{\interface}{\bullet}
-\NewDocumentCommand\vt{oo}{%
-    T\IfValueT{#2}{_#2}\IfValueT{#1}{[#1]}%
-}
-\NewDocumentCommand\vs{oo}{%
-    S\IfValueT{#2}{_#2}\IfValueT{#1}{[#1]}%
-}
-\newcommand{\vconnsr}{\kappa}
-\newcommand{\vconnsl}{\kappa^{-1}}
-\newcommand{\htrim}[1]{\lceil #1 \rceil}
-\newcommand{\hinter}[2]{\lfloor #1 \rfloor_#2}
-\newcommand{\siface}[1]{\ulcorner #1 \urcorner}
-\newcommand{\vtlabels}{\labels^{T}}
-\newcommand{\vslabels}{\labels^{S}}
-\newcommand{\vleft}{\lambda}                          % left
-\newcommand{\vright}{\rho}                            % right
-\NewDocumentCommand\vtorder{o}{%
-    \torder[\vt][\IfValueT{#1}{#1}]%
-}
-\NewDocumentCommand\vsorder{o}{%
-    \torder[\vs][\IfValueT{#1}{#1}]%
-}
-\NewDocumentCommand\lhyper{o}{%
-(\vs\IfValueT{#1}{_#1}, \vt\IfValueT{#1}{_#1}, \edges\IfValueT{#1}{_#1}, \esources\IfValueT{#1}{_#1}, \etargets\IfValueT{#1}{_#1}, \vconnsr\IfValueT{#1}{_#1})%
-}
-\NewDocumentCommand\llhyper{o}{%
-(\vs\IfValueT{#1}{_#1}, \vt\IfValueT{#1}{_#1}, \edges\IfValueT{#1}{_#1}, \esources\IfValueT{#1}{_#1}, \etargets\IfValueT{#1}{_#1}, \vconnsr\IfValueT{#1}{_#1}, \labels\IfValueT{#1}{_#1})%
-}
-\NewDocumentCommand\lilhyper{o}{%
-(\edges\IfValueT{#1}{_#1}, \vs\IfValueT{#1}{_#1}, \vt\IfValueT{#1}{_#1}, \vconnsr\IfValueT{#1}{_#1}, \labels\IfValueT{#1}{_#1})%
-}
-\NewDocumentCommand\lilhypere{o}{%
-(\edges\IfValueT{#1}{_#1}, \edges\IfValueT{#1}{_#1}[\id], \vs\IfValueT{#1}{_#1}, \vt\IfValueT{#1}{_#1}, \vconnsr\IfValueT{#1}{_#1}, \labels\IfValueT{#1}{_#1})%
-}
-\newcommand{\hypers}{((\vt, \vtorder), (\vs, \vsorder), \edges, \inedges, \outedges, \vleft, \vright, \vconnsr, \labels)}
-\newcommand{\includehypergraph}[2][0.35]{{\includesvg[scale=#1]{#2}}}
