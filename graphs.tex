@@ -50,11 +50,19 @@
 \NewDocumentCommand\termandfrobtohypsigma{o}{%
     \termandfrobtohyp[\IfValueTF{#1}{#1}{-}]{\Sigma}
 }
+\NewDocumentCommand\foldinterfaces{o}{%
+    \ulcorner{\IfValueTF{#1}{#1}{-}}\urcorner
+}
+
 
 % graph rewriting
 \newcommand{\deriv}[1]{\xRightarrow{#1}}
-\newcommand{\rewrite}{\Rightarrow}
-\newcommand{\grewrite}{\rightsquigarrow}
+\NewDocumentCommand\rewrite{o}{%
+    \Rightarrow\IfValueT{#1}{_{#1}}
+}
+\NewDocumentCommand\grewrite{o}{%
+    \rightsquigarrow\IfValueT{#1}{_{#1}}
+}
 \newcommand{\rrule}[2]{\langle #1,#2 \rangle}
 \newcommand{\pushoutcomplement}[1]{#1^\bot}
 
