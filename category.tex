@@ -1,14 +1,34 @@
 % category stuff
+
 \newcommand{\pair}[2]{\langle #1,#2 \rangle}
+
+% categories
+
+\newcommand{\morph}[3]{{#1 \colon #2 \to #3}}
+\newcommand{\seq}{{\ \fatsemi\ }}
 \NewDocumentCommand\id{o}{%
     \mf{id}\IfValueT{#1}{_{#1}}%
 }
-\newcommand{\morph}[3]{{#1 \colon #2 \to #3}}
-\newcommand{\dom}[1]{\mathsf{dom}(#1)}
-\newcommand{\cod}[1]{\mathsf{cod}(#1)}
-\newcommand{\seq}{{\ \fatsemi\ }}
+
+% monoidal categories
+
 \newcommand{\tensor}{\otimes}
 \newcommand{\bigtensor}{\bigotimes}
+
+% symmetric monoidal categories
+
+\newcommand{\braid}[2]{{\gamma_{#1,#2}}}
+\newcommand{\swap}[2]{{\sigma_{#1,#2}}}
+
+% symmetric traced monoidal categories
+
+\DeclareMathOperator{\tr}{Tr}
+\NewDocumentCommand\trace{moom}{%
+    {\tr^{#1}\IfValueT{#2}{_{#2, #3}}\left(#4\right)}
+}
+
+% categories with structure
+
 \NewDocumentCommand\ccopy{o}{
     {\Delta\IfValueT{#1}{_{#1}}}
 }
@@ -21,48 +41,35 @@
 \NewDocumentCommand\cinit{o}{
     {\square\IfValueT{#1}{_{#1}}}
 }
-\newcommand{\braid}[2]{{\gamma_{#1,#2}}}
-\newcommand{\swap}[2]{{\sigma_{#1,#2}}}
-\DeclareMathOperator{\tr}{Tr}
-\newcommand{\trace}[2]{{\tr^{#1}(#2)}}
-\newcommand{\vtrace}[4]{{\tr^{#1}_{#2,#3}(#4)}}
-\newcommand{\mon}{\star}
-
-\NewDocumentCommand\iter{om}{%
-    \mathsf{iter}\IfValueT{#1}{^{#1}}(#2)%
-}
 \newcommand{\fp}{\dagger}
+\newcommand{\fixpoint}[1]{(#1)^{\fp}}
 \NewDocumentCommand\fix{o}{
     \mathsf{fix}\IfValueT{#1}{(#1)}
 }
-\newcommand{\fixpoint}[1]{(#1)^{\fp}}
 
-\newcommand{\cospan}[3]{#1~\to~#2~\leftarrow~#3}
-\newcommand{\cospanx}[5]{#1~\xrightarrow{#2}~#3 \xleftarrow{#4}~#5}
-\newcommand{\spann}[3]{#1~\leftarrow~#2~\rightarrow~#3}
-\newcommand{\spanx}[5]{#1~\xleftarrow{#2}~#3~\xrightarrow{#4}~#5}
-\newcommand{\csp}[1]{Csp(#1)}
-
-% monoidal signatures
+% freely generated categories
 
 \newcommand{\signature}{\Sigma}
 \newcommand{\sorts}{\mcc}
+\newcommand{\dom}[1]{\mathsf{dom}(#1)}
+\newcommand{\cod}[1]{\mathsf{cod}(#1)}
+
+% spans and cospans
+
+\NewDocumentCommand\spann{momom}{%
+    {#1 \IfValueTF{#2}{\xleftarrow{#2}}{\leftarrow} #3 \IfValueTF{#4}{\xrightarrow{#4}}{\rightarrow} #5}
+}
+\NewDocumentCommand\cospan{momom}{%
+    {#1 \IfValueTF{#2}{\xrightarrow{#2}}{\rightarrow} #3 \IfValueTF{#4}{\xleftarrow{#4}}{\leftarrow} #5}
+}
+\newcommand{\csp}[1]{Csp(#1)}
 
 % example categories
 
 \newcommand{\set}{\mathbf{Set}}
 \newcommand{\frob}{\mathbf{Frob}}
-\newcommand{\ssigma}{\mathbf{S}_{\Sigma}}
-\newcommand{\termtype}{\mathbf{Term}_{\signature}}
-\newcommand{\cterm}{\mathbf{CM}\termtype}
-\newcommand{\cartterm}{\mathbf{C}\termtype}
-\newcommand{\ntermtype}{\mathbf{Term}_{\signature,\nat}}
-\newcommand{\gtermtype}{\mathbf{Term}_{\signature,\sorts}}
-
-% props
-
-\newcommand{\finset}{\mathbb{F}} % skeletal category of finite sets and functions
-\newcommand{\perms}{\mathbb{P}} % skeletal category of finite sets and bijections
+\newcommand{\finset}{\mathbb{F}}        % skeletal category of finite sets and functions
+\newcommand{\perms}{\mathbb{P}}         % skeletal category of finite sets and bijections
 \newcommand{\smc}[1]{\mathbf{S}_{#1}}
 \newcommand{\smcsigma}{\smc{\Sigma}}
 \newcommand{\stmc}[1]{\mathbf{T}_{#1}}
