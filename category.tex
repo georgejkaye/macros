@@ -62,7 +62,8 @@
 \NewDocumentCommand\cospan{momom}{%
     {#1 \IfValueTF{#2}{\xrightarrow{#2}}{\rightarrow} #3 \IfValueTF{#4}{\xleftarrow{#4}}{\leftarrow} #5}
 }
-\newcommand{\csp}[1]{Csp(#1)}
+\newcommand{\csp}[1]{\mathsf{Csp}(#1)}
+\newcommand{\cspf}[2]{\mathsf{Csp}_{#1}(#2)}
 
 % example categories
 

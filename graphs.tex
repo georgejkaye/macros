@@ -22,15 +22,13 @@
 
 % cospan bicategories of hypergraphs
 
-\newcommand{\cspdhyp}{\mathsf{Csp}_{D}(\hypsigma)}
-\newcommand{\cspfihyp}{\mathsf{Csp}_{FI}(\hypsigma)}
-\newcommand{\macspdhyp}{\mathsf{MACsp}_{D}(\hypsigma)}
-\newcommand{\macspfi}{\mathsf{MACsp}_{FI}}
-\newcommand{\macspfihyp}{\macspfi(\hypsigma)}
-\newcommand{\smcspfi}{\mathsf{SMCsp}_{FI}}
-\newcommand{\smcspfihyp}{\smcspfi(\hypsigma)}
-\newcommand{\lsmcspfihyp}{\mathsf{LSMCsp}_{FI}(\hypsigma)}
-\newcommand{\rsmcspfihyp}{\mathsf{RSMCsp}_{FI}(\hypsigma)}
+\newcommand{\cspdhyp}{\cspf{D}{\hypsigma}}
+\newcommand{\cspfihyp}{\cspf{FI}{\hypsigma}}
+\newcommand{\macspdhyp}{\mathsf{MA}\cspdhyp}
+\newcommand{\macspfihyp}{\mathsf{MA}\cspf{FI}{\hypsigma}}
+\newcommand{\pmcspfihyp}{\mathsf{PM}\cspf{FI}{\hypsigma}}
+\newcommand{\lsmcspfihyp}{\mathsf{LSM}\cspf{FI}{\hypsigma}}
+\newcommand{\rsmcspfihyp}{\mathsf{RSM}\cspf{FI}{\hypsigma}}
 
 % paths
 \newcommand{\vpath}[2]{#1 \rightsquigarrow #2}
