@@ -9,6 +9,7 @@
 \NewDocumentCommand\id{o}{%
     \mf{id}\IfValueT{#1}{_{#1}}%
 }
+\newcommand{\op}[1]{#1^{\mathsf{op}}}
 
 % monoidal categories
 
@@ -62,13 +63,18 @@
 \NewDocumentCommand\cospan{momom}{%
     {#1 \IfValueTF{#2}{\xrightarrow{#2}}{\rightarrow} #3 \IfValueTF{#4}{\xleftarrow{#4}}{\leftarrow} #5}
 }
-\newcommand{\csp}[1]{\mathsf{Csp}(#1)}
-\newcommand{\cspf}[2]{\mathsf{Csp}_{#1}(#2)}
+\NewDocumentCommand\csp{om}{%
+    \mathsf{Csp}\IfValueT{#1}{_{#1}}(#2)
+}
 
 % example categories
 
 \newcommand{\set}{\mathbf{Set}}
 \newcommand{\frob}{\mathbf{Frob}}
+\newcommand{\mon}{\mathbf{Mon}}
+\newcommand{\cmon}{\mathbf{CMon}}
+\newcommand{\comon}{\mathbf{Comon}}
+\newcommand{\ccomon}{\mathbf{CComon}}
 \newcommand{\finset}{\mathbb{F}}        % skeletal category of finite sets and functions
 \newcommand{\perms}{\mathbb{P}}         % skeletal category of finite sets and bijections
 \newcommand{\smc}[1]{\mathbf{S}_{#1}}

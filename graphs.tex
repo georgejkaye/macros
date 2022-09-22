@@ -22,13 +22,13 @@
 
 % cospan bicategories of hypergraphs
 
-\newcommand{\cspdhyp}{\cspf{D}{\hypsigma}}
-\newcommand{\cspfihyp}{\cspf{FI}{\hypsigma}}
+\newcommand{\cspdhyp}{\csp[D]{\hypsigma}}
+\newcommand{\cspfihyp}{\csp[FI]{\hypsigma}}
 \newcommand{\macspdhyp}{\mathsf{MA}\cspdhyp}
-\newcommand{\macspfihyp}{\mathsf{MA}\cspf{FI}{\hypsigma}}
-\newcommand{\pmcspfihyp}{\mathsf{PM}\cspf{FI}{\hypsigma}}
-\newcommand{\lsmcspfihyp}{\mathsf{LSM}\cspf{FI}{\hypsigma}}
-\newcommand{\rsmcspfihyp}{\mathsf{RSM}\cspf{FI}{\hypsigma}}
+\newcommand{\macspfihyp}{\mathsf{MA}\csp[FI]{\hypsigma}}
+\newcommand{\pmcspfihyp}{\mathsf{PM}\csp[FI]{\hypsigma}}
+\newcommand{\plmcspfihyp}{\mathsf{PLM}\csp[FI]{\hypsigma}}
+\newcommand{\prmcspfihyp}{\mathsf{PRM}\csp[FI]{\hypsigma}}
 
 % paths
 \newcommand{\vpath}[2]{#1 \rightsquigarrow #2}
@@ -38,7 +38,10 @@
     \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{#2}
 }
 \NewDocumentCommand\frobtohyp{o}{%
-    [{\IfValueTF{#1}{#1}{-}}]
+    \left[{\IfValueTF{#1}{#1}{-}}\right]
+}
+\NewDocumentCommand\comonoidtohyp{o}{%
+    \IfValueTF{#1}{\frobtohyp[#1]}{\frobtohyp}
 }
 \NewDocumentCommand\termandfrobtohyp{om}{%
     \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{#2}
