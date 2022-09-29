@@ -89,8 +89,9 @@
 \NewDocumentCommand\circuittomealy{om}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket_{#2}%
 }
+\DeclareMathOperator{\uniquestream}{!}
 \NewDocumentCommand\mealytostream{o}{%
-    {!\IfValueTF{#1}{#1}{(-)}}%
+    {\uniquestream\IfValueTF{#1}{#1}{(-)}}%
 }
 \NewDocumentCommand\mealytocircuit{om}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
