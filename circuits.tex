@@ -35,6 +35,10 @@
 \newcommand{\gateinterpretation}{\interpretation_{\mathcal{G}}}
 \newcommand{\gatefunction}[1]{\overline{#1}}
 
+\NewDocumentCommand\circuittofunc{om}{%
+    \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{C}}_{#2}
+}
+
 % extensional equivalence
 \newcommand{\extequiv}[1]{\approx_{#1}}
 \newcommand{\extequivi}{\extequiv{\interpretation}}
