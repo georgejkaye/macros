@@ -38,6 +38,9 @@
 \NewDocumentCommand\circuittofunc{om}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{C}}_{#2}
 }
+\NewDocumentCommand\circuittostream{om}{%
+    \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{S}}_{#2}
+}
 
 % extensional equivalence
 \newcommand{\extequiv}[1]{\approx_{#1}}
