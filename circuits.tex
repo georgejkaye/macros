@@ -41,6 +41,9 @@
 \NewDocumentCommand\circuittostream{om}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{S}}_{#2}
 }
+\NewDocumentCommand\circuittomealy{om}{%
+    \left[\IfValueTF{#1}{#1}{-}\right]_{#2}%
+}
 
 % extensional equivalence
 \newcommand{\extequiv}[1]{\approx_{#1}}

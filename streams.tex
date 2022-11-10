@@ -81,10 +81,6 @@
 \NewDocumentCommand\pcsprop{o}{%
     \mathbf{PCStream}_{\IfValueT{#1}{#1}}%
 }
-
-\NewDocumentCommand\circuittomealy{om}{%
-    \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket_{#2}%
-}
 \newcommand{\uniquestream}{!}
 \NewDocumentCommand\mealytostream{o}{%
     {\uniquestream\IfValueTF{#1}{#1}{(-)}}%
