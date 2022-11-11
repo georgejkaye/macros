@@ -18,6 +18,10 @@
     \bar{s}\IfValueT{#1}{^{#1}}
 }
 
+\newcommand{\mealyfunctionoutput}[1]{#1_O}
+\newcommand{\mealyfunctiontransition}[1]{#1_T}
+
+
 \NewDocumentCommand\streaminit{o}{\mathsf{i}\IfValueT{#1}{(#1)}}
 \NewDocumentCommand\streamderv{o}{\mathsf{d}\IfValueT{#1}{(#1)}}
 \newcommand{\streamcons}{\mathbin{::}}
