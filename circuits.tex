@@ -12,18 +12,6 @@
 \newcommand{\disconnected}{\bullet}
 \newcommand{\shortcircuit}{\circ}
 
-% belnap
-\newcommand{\belnap}{B}
-\newcommand{\belnapsignature}{\circuitsignature_\belnap}
-\newcommand{\belnapvalues}{\circuitsignaturevalues_\belnap}
-\newcommand{\belnapgates}{\circuitsignaturegates_\belnap}
-\newcommand{\belnaparity}{\circuitsignaturearity_\belnap}
-
-\newcommand{\belnapnone}{\mathsf{n}}
-\newcommand{\belnapfalse}{\mathsf{f}}
-\newcommand{\belnaptrue}{\mathsf{t}}
-\newcommand{\belnapboth}{\mathsf{b}}
-
 % logic gates
 \newcommand{\nor}{{\downarrow}}
 \newcommand{\xor}{\oplus}
@@ -40,6 +28,22 @@
 \newcommand{\valueinterpretation}{\interpretation_{\mathcal{V}}}
 \newcommand{\gateinterpretation}{\interpretation_{\mathcal{G}}}
 \newcommand{\gatefunction}[1]{\overline{#1}}
+
+% belnap
+\newcommand{\belnap}{B}
+\newcommand{\belnapsignature}{\circuitsignature_{\belnap}}
+\newcommand{\belnapvalues}{\circuitsignaturevalues_{\belnap}}
+\newcommand{\belnapgates}{\circuitsignaturegates_{\belnap}}
+\newcommand{\belnaparity}{\circuitsignaturearity_{\belnap}}
+
+\newcommand{\belnapnone}{\mathsf{n}}
+\newcommand{\belnapfalse}{\mathsf{f}}
+\newcommand{\belnaptrue}{\mathsf{t}}
+\newcommand{\belnapboth}{\mathsf{b}}
+
+\newcommand{\belnaplattice}{\values_{\belnap}}
+
+\newcommand{\belnapinterpretation}{\interpretation_{\belnap}}
 
 \NewDocumentCommand\circuittofunc{om}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{C}}_{#2}
