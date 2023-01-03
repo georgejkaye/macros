@@ -23,8 +23,8 @@
 \newcommand{\transitionafter}[2]{S_{#1,#2}}
 
 
-\NewDocumentCommand\streaminit{o}{\mathsf{i}\IfValueT{#1}{(#1)}}
-\NewDocumentCommand\streamderv{o}{\mathsf{d}\IfValueT{#1}{(#1)}}
+\NewDocumentCommand\streaminit{o}{\mathsf{i}\IfValueT{#1}{\left(#1\right)}}
+\NewDocumentCommand\streamderv{o}{\mathsf{d}\IfValueT{#1}{\left(#1\right)}}
 \newcommand{\streamcons}{\mathbin{::}}
 
 \newcommand{\stream}[1]{{#1}^{\omega}}
