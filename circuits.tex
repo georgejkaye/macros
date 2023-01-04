@@ -99,8 +99,8 @@
 \newcommand{\sassg}{\Gamma}
 
 \newcommand{\ginterp}[1]{\llbracket{#1}\rrbracket}
-\NewDocumentCommand\eqaxioms{om}{%
-    \IfValueTF{#1}{\stackrel{#1}{=}}{=_{#2}}
+\NewDocumentCommand\eqaxioms{o}{%
+    \IfValueTF{#1}{\stackrel{#1}{=}}{=}
 }
 \newcommand{\eqaxiomsc}{\eqaxioms{\mathcal{C}}}
 
