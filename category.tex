@@ -45,7 +45,7 @@
 \newcommand{\fp}{\dagger}
 \newcommand{\fixpoint}[1]{(#1)^{\fp}}
 \NewDocumentCommand\fix{o}{
-    \mathsf{fix}\IfValueT{#1}{(#1)}
+    \mathsf{fix}\IfValueT{#1}{\left(#1\right)}
 }
 
 % freely generated categories

@@ -1,5 +1,7 @@
-% orders 
-\newcommand{\proj}[1]{\pi_{#1}}
+% orders
+\NewDocumentCommand\proj{mo}{%
+  \pi_{#1}\IfValueT{#2}{\left(#2\right)}
+}
 \newcommand{\projq}{\pi_?}
 
 % lattices
