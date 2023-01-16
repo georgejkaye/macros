@@ -25,9 +25,13 @@
 % interpretation
 
 \newcommand{\interpretation}{\mathcal{I}}
-\newcommand{\valueinterpretation}{\interpretation_{\mathcal{V}}}
-\newcommand{\gateinterpretation}{\interpretation_{\mathcal{G}}}
-\newcommand{\gatefunction}[1]{\overline{#1}}
+
+\NewDocumentCommand\valueinterpretation{o}{%
+    \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{V}}
+}
+\NewDocumentCommand\gateinterpretation{o}{%
+    \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{G}}
+}
 
 % belnap
 \newcommand{\belnap}{B}
@@ -44,6 +48,12 @@
 \newcommand{\belnaplattice}{\values_{\belnap}}
 
 \newcommand{\belnapinterpretation}{\interpretation_{\belnap}}
+\NewDocumentCommand\belnapvalueinterpretation{o}{%
+    \valueinterpretation\IfValueT{#1}{[#1]}_{\belnap}
+}
+\NewDocumentCommand\belnapgateinterpretation{o}{%
+    \gateinterpretation\IfValueT{#1}{[#1]}_{\belnap}
+}
 
 \NewDocumentCommand\circuittofunc{om}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{C}}_{#2}
