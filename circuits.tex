@@ -80,14 +80,13 @@
 \newcommand{\scircsigma}{\scirc{\Sigma}}
 
 % sequential circuits quotiented over some interpretation
-\newcommand{\scircq}[2]{\mathbf{SCirc}_{#1,#2}}
-\newcommand{\scircsigmai}{\scircq{\Sigma}{\interpretation}}
-\newcommand{\scircsigmac}{\scircq{\Sigma}{\combinationalequations}}
-\newcommand{\scircsigmam}{\scircq{\Sigma}{\mealyequations}}
-\newcommand{\scircsigmal}{\scircq{\Sigma}{\localequations}}
-\newcommand{\scircsigmad}{\scircq{\Sigma}{\delayequations}}
-\newcommand{\scircsigmaf}{\scircq{\Sigma}{\abstractionequations}}
-\newcommand{\scircsigmar}{\scircq{\Sigma}{\reductiveequations}}
+\newcommand{\scircq}[3]{\mathbf{SCirc}^{#3}_{#1,#2}}
+\newcommand{\scircsigmac}{\scircq{\Sigma}{\interpretation}{\combinationalequations}}
+\newcommand{\scircsigmam}{\scircq{\Sigma}{\interpretation}{\mealyequations}}
+\newcommand{\scircsigmal}{\scircq{\Sigma}{\interpretation}{\localequations}}
+\newcommand{\scircsigmad}{\scircq{\Sigma}{\interpretation}{\delayequations}}
+\newcommand{\scircsigmaf}{\scircq{\Sigma}{\interpretation}{\abstractionequations}}
+\newcommand{\scircsigmar}{\scircq{\Sigma}{\interpretation}{\reductiveequations}}
 
 % equational reasoning
 \newcommand{\equations}[1]{\mathcal{E}_{#1}}
@@ -97,7 +96,7 @@
 \newcommand{\algebraicequations}{\mathcal{A}}
 \newcommand{\bialgebraequations}{\mathcal{B}}
 \newcommand{\cartesiannat}{\mathcal{N}}
-\newcommand{\combinationalequations}{\mathcal{C}}
+\newcommand{\combinationalequations}{\mathcal{C}_{\interpretation}}
 \newcommand{\mealyequations}{\mathcal{M}}
 \newcommand{\delayequations}{\mathcal{D}}
 \newcommand{\instantfeedbackequation}{\mathsf{IF}}
