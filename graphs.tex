@@ -43,7 +43,7 @@
     \left[{\IfValueTF{#1}{#1}{-}}\right]
 }
 \NewDocumentCommand\comonoidtohyp{o}{%
-    \IfValueTF{#1}{\frobtohyp[#1]}{\frobtohyp}
+    \IfValueTF{#1}{\frobtohyp[#1]}{\frobtohyp}_\Sigma
 }
 \NewDocumentCommand\termandfrobtohyp{om}{%
     \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{#2}
