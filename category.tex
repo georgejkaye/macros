@@ -51,6 +51,12 @@
 % freely generated categories
 
 \newcommand{\signature}{\Sigma}
+\NewDocumentCommand\generators{o}{%
+    \Sigma\IfValueT{#1}{_{#1}}
+}
+\NewDocumentCommand\equations{o}{%
+    \mathcal{E}\IfValueT{#1}{_{#1}}
+}
 \newcommand{\colours}{\mathcal{C}}
 \newcommand{\sorts}{\mcc}
 \newcommand{\dom}[1]{\mathsf{dom}(#1)}
