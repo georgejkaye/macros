@@ -39,11 +39,14 @@
 \NewDocumentCommand\termtohyp{om}{%
     \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{#2}
 }
-\NewDocumentCommand\frobtohyp{o}{%
-    \left[{\IfValueTF{#1}{#1}{-}}\right]
+\NewDocumentCommand\frobtohyp{om}{%
+    \left[{\IfValueTF{#1}{#1}{-}}\right]_{#2}
 }
-\NewDocumentCommand\comonoidtohyp{o}{%
-    \IfValueTF{#1}{\frobtohyp[#1]}{\frobtohyp}_\Sigma
+\NewDocumentCommand\tracedtosymandfrob{o}{
+    \llcorner\IfValueTF{#1}{#1}{-}\lrcorner
+}
+\NewDocumentCommand\comonoidtohyp{om}{%
+    \IfValueTF{#1}{\frobtohyp[#1]{#2}}{\frobtohyp{#2}}^\mathbf{C}
 }
 \NewDocumentCommand\termandfrobtohyp{om}{%
     \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{#2}
