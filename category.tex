@@ -28,6 +28,16 @@
     {\tr^{#1}\IfValueT{#2}{_{#2, #3}}\left(#4\right)}
 }
 
+% compact closed category
+
+\newcommand{\dual}[1]{#1^*}
+\NewDocumentCommand\ccunit{o}{
+    \nu\IfValueT{#1}{_{#1}}
+}
+\NewDocumentCommand\cccounit{o}{
+    \epsilon\IfValueT{#1}{_{#1}}
+}
+
 % categories with structure
 
 \NewDocumentCommand\ccopy{o}{
