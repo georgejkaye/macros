@@ -43,7 +43,10 @@
     \left[{\IfValueTF{#1}{#1}{-}}\right]_{#2}
 }
 \NewDocumentCommand\tracedtosymandfrob{o}{
-    \llcorner\IfValueTF{#1}{#1}{-}\lrcorner
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}
+}
+\NewDocumentCommand\comonoidtofrob{o}{
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{C}
 }
 \NewDocumentCommand\comonoidtohyp{om}{%
     \IfValueTF{#1}{\frobtohyp[#1]{#2}}{\frobtohyp{#2}}^\mathbf{C}
