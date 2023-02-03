@@ -42,11 +42,14 @@
 \NewDocumentCommand\frobtohyp{om}{%
     \left[{\IfValueTF{#1}{#1}{-}}\right]_{#2}
 }
-\NewDocumentCommand\tracedtosymandfrob{o}{
-    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}
+\NewDocumentCommand\tracedtosymandfrob{om}{
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{#2}
 }
 \NewDocumentCommand\comonoidtofrob{o}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{C}
+}
+\NewDocumentCommand\tracedandcomonoidtofrob{om}{
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{#2}
 }
 \NewDocumentCommand\comonoidtohyp{om}{%
     \IfValueTF{#1}{\frobtohyp[#1]{#2}}{\frobtohyp{#2}}^\mathbf{C}
