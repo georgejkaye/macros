@@ -12,11 +12,15 @@
     \mathsf{id}\IfValueT{#1}{_{#1}}%
 }
 \newcommand{\op}[1]{#1^{\mathsf{op}}}
+\newcommand{\inverse}[1]{#1^{-1}}
 
 % monoidal categories
 
 \newcommand{\tensor}{\otimes}
 \newcommand{\bigtensor}{\bigotimes}
+\newcommand{\associator}[3]{\alpha_{#1, #2, #3}}
+\newcommand{\leftunitor}[1]{\lambda_{#1}}
+\newcommand{\rightunitor}[1]{\rho_{#1}}
 
 % symmetric monoidal categories
 
@@ -89,6 +93,7 @@
 % example categories
 
 \newcommand{\set}{\mathbf{Set}}
+\newcommand{\cat}{\mathbf{Cat}}
 \newcommand{\frob}{\mathbf{Frob}}
 \newcommand{\mon}{\mathbf{Mon}}
 \newcommand{\cmon}{\mathbf{CMon}}
