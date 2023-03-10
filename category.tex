@@ -4,8 +4,9 @@
 
 % categories
 
-\DeclareMathOperator{\ob}{Ob}
-\newcommand{\morph}[3]{{#1 \ \colon \ #2 \to #3}}
+\newcommand{\ob}[1]{#1_{0}}
+\newcommand{\mor}[3]{#1_{1}(#2, #3)}
+\newcommand{\morph}[3]{{{#1} \colon {#2 \to #3}}}
 \newcommand{\seq}{{\ \fatsemi\ }}
 \NewDocumentCommand\id{o}{%
     \mathsf{id}\IfValueT{#1}{_{#1}}%
