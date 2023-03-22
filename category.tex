@@ -75,8 +75,12 @@
 }
 \newcommand{\colours}{\mathcal{C}}
 \newcommand{\sorts}{\mcc}
-\newcommand{\dom}[1]{\mathsf{dom}(#1)}
-\newcommand{\cod}[1]{\mathsf{cod}(#1)}
+\NewDocumentCommand\dom{o}{%
+    \mathsf{dom}\IfValueT{#1}{(#1)}
+}
+\NewDocumentCommand\cod{o}{%
+    \mathsf{cod}\IfValueT{#1}{(#1)}
+}
 
 % spans and cospans
 
