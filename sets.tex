@@ -2,7 +2,6 @@
 \NewDocumentCommand\proj{mo}{%
   \pi_{#1}\IfValueT{#2}{\left(#2\right)}
 }
-\newcommand{\projq}{\pi_?}
 
 % lattices
 \newcommand{\lub}{\sqcup}
@@ -45,10 +44,6 @@
 % vectors and tuples
 \newcommand{\vect}[2]{\mathbf{#1}^{#2}}
 
-% legacy
-\newcommand{\djf}{\oplus}
-\newcommand{\ndjf}{\oslash}
-\newcommand{\comborder}{<}
-\NewDocumentCommand\torder{oo}{%
-    {\leq\IfValueT{#1}{^{#1}}\IfValueT{#2}{_{#2}}}%
-}
+% lists
+\newcommand{\freemon}[1]{{#1}^\star}
+\newcommand{\concat}{\mathbin{+\hspace{-3pt}+}}
