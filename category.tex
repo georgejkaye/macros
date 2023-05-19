@@ -82,6 +82,9 @@
 \NewDocumentCommand\cod{o}{%
     \mathsf{cod}\IfValueT{#1}{(#1)}
 }
+\NewDocumentCommand\eqaxioms{o}{%
+    \IfValueTF{#1}{\stackrel{#1}{=}}{=}
+}
 
 % spans and cospans
 
