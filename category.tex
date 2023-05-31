@@ -86,8 +86,14 @@
 \NewDocumentCommand\dom{o}{%
     \mathsf{dom}\IfValueT{#1}{(#1)}
 }
+\NewDocumentCommand\domw{o}{%
+    \overline{\mathsf{dom}\IfValueT{#1}{(#1)}}
+}
 \NewDocumentCommand\cod{o}{%
     \mathsf{cod}\IfValueT{#1}{(#1)}
+}
+\NewDocumentCommand\codw{o}{%
+    \overline{\mathsf{cod}\IfValueT{#1}{(#1)}}
 }
 \NewDocumentCommand\eqaxioms{o}{%
     \IfValueTF{#1}{\stackrel{#1}{=}}{=}
