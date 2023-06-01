@@ -4,8 +4,8 @@
 
 % categories
 
-\newcommand{\ob}[1]{#1_{0}}
-\newcommand{\mor}[3]{#1_{1}(#2, #3)}
+\newcommand{\ob}[1]{\text{ob}(#1)}
+\newcommand{\mor}[3]{#1(#2, #3)}
 \newcommand{\morph}[3]{{{#1} \colon {#2 \to #3}}}
 \newcommand{\seq}{{\ \fatsemi\ }}
 \NewDocumentCommand\id{o}{%
@@ -114,6 +114,8 @@
 % example categories
 
 \newcommand{\set}{\mathbf{Set}}
+\newcommand{\rel}{\mathbf{Rel}}
+\newcommand{\pos}{\mathbf{Pos}}
 \newcommand{\cat}{\mathbf{Cat}}
 \newcommand{\frob}{\mathbf{Frob}}
 \newcommand{\mon}{\mathbf{Mon}}
@@ -127,3 +129,8 @@
 \newcommand{\smcsigma}{\smc{\Sigma}}
 \newcommand{\stmc}[1]{\mathbf{T}_{#1}}
 \newcommand{\stmcsigma}{\stmc{\Sigma}}
+
+% example functors
+
+\newcommand{\listf}{\mathsf{List}}
+\newcommand{\idf}{\mathsf{Id}}
