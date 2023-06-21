@@ -98,8 +98,10 @@
 \NewDocumentCommand\eqaxioms{o}{%
     \IfValueTF{#1}{\stackrel{#1}{=}}{=}
 }
-\newcommand{\reduction}{\rightsquigarrow}
-\newcommand{\reductions}{\reduction^*}
+\NewDocumentCommand\reduction{o}{%
+    \IfValueTF{#1}{\stackrel{#1}{\rightsquigarrow}}{\rightsquigarrow}
+}
+\newcommand{\reductions}{\reduction[*]}
 
 % spans and cospans
 
