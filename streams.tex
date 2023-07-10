@@ -18,14 +18,15 @@
     \bar{s}\IfValueT{#1}{^{#1}}
 }
 
-\newcommand{\mealyfunctionoutput}[1]{#1_O}
-\newcommand{\mealyfunctiontransition}[1]{#1_T}
+\newcommand{\mealyfunctionoutput}[1]{#1_{\mathcal{O}}}
+\newcommand{\mealyfunctiontransition}[1]{#1_\mathcal{T}}
 \newcommand{\transitionafter}[2]{T_{#1,#2}}
 
 
 \NewDocumentCommand\streaminit{o}{\mathsf{hd}\IfValueT{#1}{\left(#1\right)}}
 \NewDocumentCommand\streamderv{o}{\mathsf{tl}\IfValueT{#1}{\left(#1\right)}}
 \newcommand{\streamcons}{\mathbin{::}}
+\newcommand{\prefix}[2]{#1(\rightarrow#2)}
 
 \newcommand{\stream}[1]{{#1}^{\omega}}
 \newcommand{\causalstreamfuncorder}{\preceq}
@@ -64,8 +65,6 @@
 \newcommand{\stateset}[3]{\mathbf{#1}^{#2}_{#3}}
 \newcommand{\lifetime}[1]{\mathsf{life}(#1)}
 \newcommand{\reg}[1]{v_{#1}}
-\newcommand{\prefix}{r}
-\newcommand{\period}{p}
 \newcommand{\fixp}[1]{\mathsf{fix}(#1)}
 
 \newcommand{\statestr}{\sigma}
