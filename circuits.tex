@@ -85,8 +85,10 @@
 \newcommand{\scircsigma}{\scirc{\Sigma}}
 
 % sequential circuits quotiented over some interpretation
-\newcommand{\scircq}[2]{\mathbf{SCirc}_{#1,#2}}
-\newcommand{\scircsigmai}{\scircq{\Sigma}{\interpretation}}
+\newcommand{\scircq}[2]{\mathbf{SCirc}_{{#1} / {#2}}}
+\newcommand{\scircsigmai}{\scircq{\Sigma}{\approx_{\interpretation}}}
+\newcommand{\scircsigmae}{\scircq{\Sigma}{\mce_{\interpretation}}}
+\newcommand{\scircsigmaobs}{\scircq{\Sigma}{\sim_{\interpretation}}}
 
 % equational reasoning
 \newcommand{\commcomonoid}{CC}
@@ -118,7 +120,7 @@
 \newcommand{\instantfeedbackeqn}{\mathsf{IF}}
 \newcommand{\waveformeqn}{\mathsf{Wave}}
 \newcommand{\bisimulationeqn}{\mathsf{Bisim}}
-\newcommand{\minimisationequn}{\mathsf{Min}}
+\newcommand{\minimisatiponequn}{\mathsf{Min}}
 
 \newcommand{\cartnatcopyeqn}{\mathsf{NC}}
 \newcommand{\cartnatdisceqn}{\mathsf{ND}}
@@ -137,12 +139,18 @@
 \newcommand{\delaydiscardeqn}{\mathsf{DD}}
 
 \newcommand{\circuitbisim}{\mathsf{Bi}}
+\newcommand{\cycleeqn}{\mathsf{Cycle}}
+\newcommand{\closedfixpointeqn}{\mathsf{CFix}}
+\newcommand{\unfoldeqn}{\mathsf{Unfold}}
 
 \newcommand{\productiveequationsdelay}{\mathcal{P}^\diamond}
 \newcommand{\productiveequations}{\mathcal{P}}
 \newcommand{\reductiveequations}{\mathcal{R}}
 \newcommand{\abstractionequations}{\mathcal{F}}
 \newcommand{\localequations}{\mathcal{L}}
+
+\newcommand{\inputcandidates}{\mathsf{in}}
+
 
 \newcommand{\instval}[1]{\mathsf{hd}(#1)}
 \newcommand{\tail}[1]{\mathsf{tl}(#1)}
