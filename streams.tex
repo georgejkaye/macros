@@ -87,13 +87,13 @@
     {\uniquestream\IfValueTF{#1}{#1}{(-)}}%
 }
 \NewDocumentCommand\mealytocircuit{om}{%
-    \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
+    \left\langle\IfValueTF{#1}{#1}{-}\right\rangle_{#2}%
 }
 \NewDocumentCommand\mealytocircuiti{o}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{\interpretation}%
 }
 \NewDocumentCommand\streamtomealy{om}{%
-    \left\langle\IfValueTF{#1}{#1}{-}\right\rangle_{#2}%
+    \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
 }
 
 \newcommand{\stateorder}{\preceq}
