@@ -24,13 +24,18 @@
 % cospan bicategories of hypergraphs
 
 \newcommand{\cspdhyp}{\csp[D]{\hypsigma}}
+\newcommand{\cspdshyp}{\csp[D_\mcs]{\hypsigma}}
 \newcommand{\cspfihyp}{\csp[FI]{\hypsigma}}
 \newcommand{\macspdhyp}{\mathsf{MA}\cspdhyp}
 \newcommand{\macspfihyp}{\mathsf{MA}\csp[FI]{\hypsigma}}
+\newcommand{\macspdshyp}{\mathsf{MA}\csp[D]{\hypsigma}}
+\newcommand{\macspdchyp}{\mathsf{MA}\csp[D_\mcs]{\hypsigma}}
 \newcommand{\pmcspfihyp}{\mathsf{PM}\csp[FI]{\hypsigma}}
 \newcommand{\pmcspdhyp}{\mathsf{PM}\csp[D]{\hypsigma}}
+\newcommand{\pmcspdschyp}{\mathsf{PM}\csp[D_\mcs]{\hypsigma}}
 \newcommand{\plmcspfihyp}{\mathsf{PLM}\csp[FI]{\hypsigma}}
 \newcommand{\plmcspdhyp}{\mathsf{PLM}\csp[D]{\hypsigma}}
+\newcommand{\plmcspdchyp}{\mathsf{PLM}\csp[D_\mcs]{\hypsigma}}
 \newcommand{\prmcspfihyp}{\mathsf{PRM}\csp[FI]{\hypsigma}}
 
 % paths
@@ -40,11 +45,29 @@
 \NewDocumentCommand\termtohyp{om}{%
     \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{#2}
 }
+\NewDocumentCommand\termtohypsigma{o}{%
+    \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{\Sigma}
+}
+\NewDocumentCommand\termtohypsigmas{o}{%
+    \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{\Sigma,\mcs}
+}
 \NewDocumentCommand\frobtohyp{om}{%
     \left[{\IfValueTF{#1}{#1}{-}}\right]_{#2}
 }
+\NewDocumentCommand\frobtohypsigma{o}{%
+    \left[{\IfValueTF{#1}{#1}{-}}\right]_{\sigma}
+}
+\NewDocumentCommand\frobtohypsigmas{o}{%
+    \left[{\IfValueTF{#1}{#1}{-}}\right]_{\sigma,\mcs}
+}
 \NewDocumentCommand\tracedtosymandfrob{om}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{#2}
+}
+\NewDocumentCommand\tracedtosymandfrobsigma{o}{
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{\Sigma}
+}
+\NewDocumentCommand\tracedtosymandfrobsigmas{o}{
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{\Sigma, \mcs}
 }
 \NewDocumentCommand\comonoidtofrob{o}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{C}
@@ -52,23 +75,27 @@
 \NewDocumentCommand\tracedandcomonoidtofrob{om}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{#2}
 }
+\NewDocumentCommand\tracedandcomonoidtofrobsigma{o}{
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{\Sigma}
+}
+\NewDocumentCommand\tracedandcomonoidtofrobsigmas{o}{
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{\Sigma, \mcs}
+}
 \NewDocumentCommand\comonoidtohyp{om}{%
     \IfValueTF{#1}{\frobtohyp[#1]{#2}}{\frobtohyp{#2}}^\mathbf{C}
 }
 \NewDocumentCommand\termandfrobtohyp{om}{%
     \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{#2}
 }
-\NewDocumentCommand\termtohypsigma{o}{%
-    \termtohyp[\IfValueTF{#1}{#1}{-}]{\Sigma}
-}
 \NewDocumentCommand\termandfrobtohypsigma{o}{%
-    \termandfrobtohyp[\IfValueTF{#1}{#1}{-}]{\Sigma}
+    \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{\Sigma}
+}
+\NewDocumentCommand\termandfrobtohypsigmas{o}{%
+    \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{\Sigma,\mcs}
 }
 \NewDocumentCommand\foldinterfaces{o}{%
     \ulcorner{\IfValueTF{#1}{#1}{-}}\urcorner
 }
-
-
 % graph rewriting
 \newcommand{\deriv}[1]{\xRightarrow{#1}}
 \NewDocumentCommand\rewrite{o}{%
