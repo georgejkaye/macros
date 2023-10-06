@@ -122,6 +122,7 @@
 % example categories
 
 \newcommand{\set}{\mathbf{Set}}
+\newcommand{\finset}{\mathbf{FinSet}}
 \newcommand{\rel}{\mathbf{Rel}}
 \newcommand{\pos}{\mathbf{Pos}}
 \newcommand{\cat}{\mathbf{Cat}}
@@ -132,8 +133,8 @@
 \newcommand{\comon}{\mathbf{Comon}}
 \newcommand{\ccomon}{\mathbf{CComon}}
 \newcommand{\bialg}{\mathbf{Bialg}}
-\newcommand{\finset}{\mathbb{F}}        % skeletal category of finite sets and functions
-\newcommand{\perms}{\mathbb{P}}         % skeletal category of finite sets and bijections
+\newcommand{\finsetprop}{\mathbb{F}}        % skeletal category of finite sets and functions
+\newcommand{\permsprop}{\mathbb{P}}         % skeletal category of finite sets and bijections
 \newcommand{\smc}[1]{\mathbf{S}_{#1}}
 \newcommand{\smcsigma}{\smc{\Sigma}}
 \newcommand{\smcsigmas}{\smc{\Sigma,\mcs}}
@@ -145,4 +146,6 @@
 % example functors
 
 \newcommand{\listf}{\mathsf{List}}
-\newcommand{\idf}{\mathsf{Id}}
+\NewDocumentCommand\idf{o}{%
+    \mathsf{Id}\IfValueT{#1}{_{#1}}%
+}
