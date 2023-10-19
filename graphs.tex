@@ -19,27 +19,28 @@
 \newcommand{\hyp}{\mathbf{Hyp}}
 \newcommand{\hypsignature}[1]{\llbracket#1\rrbracket}
 \newcommand{\hypsigma}{\hyp_{\signature}}
-\newcommand{\hypsigmas}{\hyp_{\signature,\mathcal{S}}}
+\newcommand{\hypsigmac}{\hyp_{\signature,C}}
+
+% ordering interfaces
+
+\newcommand{\pickinterfaces}{D}
+\newcommand{\pickinterfacesc}[1]{\pickinterfaces_{#1}}
 
 % cospan bicategories of hypergraphs
 
 \newcommand{\cspdhyp}{\csp[D]{\hypsigma}}
-\newcommand{\cspdshyp}{\csp[D_\mcs]{\hypsigma}}
+\newcommand{\cspdchyp}{\csp[D_C]{\hypsigma}}
 \newcommand{\cspfihyp}{\csp[FI]{\hypsigma}}
 \newcommand{\macspdhyp}{\mathsf{MA}\cspdhyp}
 \newcommand{\macspfihyp}{\mathsf{MA}\csp[FI]{\hypsigma}}
-\newcommand{\macspdshyp}{\mathsf{MA}\csp[D]{\hypsigma}}
-\newcommand{\macspdchyp}{\mathsf{MA}\csp[D_\mcs]{\hypsigma}}
+\newcommand{\macspdchyp}{\mathsf{MA}\csp[D_C]{\hypsigma}}
 \newcommand{\pmcspfihyp}{\mathsf{PM}\csp[FI]{\hypsigma}}
 \newcommand{\pmcspdhyp}{\mathsf{PM}\csp[D]{\hypsigma}}
-\newcommand{\pmcspdschyp}{\mathsf{PM}\csp[D_\mcs]{\hypsigma}}
+\newcommand{\pmcspdchyp}{\mathsf{PM}\csp[D_C]{\hypsigma}}
 \newcommand{\plmcspfihyp}{\mathsf{PLM}\csp[FI]{\hypsigma}}
 \newcommand{\plmcspdhyp}{\mathsf{PLM}\csp[D]{\hypsigma}}
-\newcommand{\plmcspdchyp}{\mathsf{PLM}\csp[D_\mcs]{\hypsigma}}
+\newcommand{\plmcspdchyp}{\mathsf{PLM}\csp[D_C]{\hypsigma}}
 \newcommand{\prmcspfihyp}{\mathsf{PRM}\csp[FI]{\hypsigma}}
-
-% notation for finset iso result
-\newcommand{\finsub}{\mathsf{fin}}
 
 % paths
 \newcommand{\vpath}[2]{#1 \rightsquigarrow #2}
@@ -51,8 +52,8 @@
 \NewDocumentCommand\termtohypsigma{o}{%
     \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{\Sigma}
 }
-\NewDocumentCommand\termtohypsigmas{o}{%
-    \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{\Sigma,\mcs}
+\NewDocumentCommand\termtohypsigmac{o}{%
+    \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{\Sigma,C}
 }
 \NewDocumentCommand\frobtohyp{om}{%
     \left[{\IfValueTF{#1}{#1}{-}}\right]_{#2}
@@ -60,8 +61,8 @@
 \NewDocumentCommand\frobtohypsigma{o}{%
     \left[{\IfValueTF{#1}{#1}{-}}\right]_{\sigma}
 }
-\NewDocumentCommand\frobtohypsigmas{o}{%
-    \left[{\IfValueTF{#1}{#1}{-}}\right]_{\sigma,\mcs}
+\NewDocumentCommand\frobtohypsigmac{o}{%
+    \left[{\IfValueTF{#1}{#1}{-}}\right]_{\Sigma,C}
 }
 \NewDocumentCommand\tracedtosymandfrob{om}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{#2}
@@ -70,7 +71,7 @@
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{\Sigma}
 }
 \NewDocumentCommand\tracedtosymandfrobsigmas{o}{
-    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{\Sigma, \mcs}
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{\Sigma, C}
 }
 \NewDocumentCommand\comonoidtofrob{o}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{C}
@@ -93,7 +94,7 @@
 \NewDocumentCommand\termandfrobtohypsigma{o}{%
     \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{\Sigma}
 }
-\NewDocumentCommand\termandfrobtohypsigmas{o}{%
+\NewDocumentCommand\termandfrobtohypsigmac{o}{%
     \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{\Sigma,\mcs}
 }
 \NewDocumentCommand\foldinterfaces{o}{%
