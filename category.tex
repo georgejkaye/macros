@@ -126,9 +126,10 @@
 \newcommand{\rel}{\mathbf{Rel}}
 \newcommand{\pos}{\mathbf{Pos}}
 \newcommand{\cat}{\mathbf{Cat}}
-\newcommand{\frob}{\mathbf{Frob}}
-\newcommand{\frobc}[1]{\mathbf{Frob}_{#1}}
-\newcommand{\frobs}{\mathbf{Frob}_{\mcs}}
+\NewDocumentCommand\frob{o}{%
+    \mathbf{Frob}\IfValueT{#1}{_{#1}}%
+}
+\newcommand{\frobc}{\frob[C]}
 \newcommand{\mon}{\mathbf{Mon}}
 \newcommand{\cmon}{\mathbf{CMon}}
 \newcommand{\comon}{\mathbf{Comon}}
