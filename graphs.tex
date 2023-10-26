@@ -70,7 +70,7 @@
 \NewDocumentCommand\tracedtosymandfrobsigma{o}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{\Sigma}
 }
-\NewDocumentCommand\tracedtosymandfrobsigmas{o}{
+\NewDocumentCommand\tracedtosymandfrobsigmac{o}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{\Sigma, C}
 }
 \NewDocumentCommand\comonoidtofrob{o}{
@@ -82,8 +82,8 @@
 \NewDocumentCommand\tracedandcomonoidtofrobsigma{o}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{\Sigma}
 }
-\NewDocumentCommand\tracedandcomonoidtofrobsigmas{o}{
-    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{\Sigma, \mcs}
+\NewDocumentCommand\tracedandcomonoidtofrobsigmac{o}{
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{\Sigma, \mcc}
 }
 \NewDocumentCommand\comonoidtohyp{om}{%
     \IfValueTF{#1}{\frobtohyp[#1]{#2}}{\frobtohyp{#2}}^\mathbf{C}
@@ -95,7 +95,7 @@
     \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{\Sigma}
 }
 \NewDocumentCommand\termandfrobtohypsigmac{o}{%
-    \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{\Sigma,\mcs}
+    \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{\Sigma,\mcc}
 }
 \NewDocumentCommand\foldinterfaces{o}{%
     \ulcorner{\IfValueTF{#1}{#1}{-}}\urcorner
