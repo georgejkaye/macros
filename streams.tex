@@ -93,10 +93,13 @@
     \left\langle\IfValueTF{#1}{#1}{-}\right\rangle_{#2}%
 }
 \NewDocumentCommand\mealytocircuiti{o}{%
-    \llangle\IfValueTF{#1}{#1}{-}\rrangle_{\interpretation}%
+    \mealytocircuit[\IfValueTF{#1}{#1}{-}]{\interpretation}%
 }
 \NewDocumentCommand\streamtomealy{om}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
+}
+\NewDocumentCommand\streamtomealyi{o}{%
+    \streamtomealy[\IfValueTF{#1}{#1}{-}]{\interpretation}%
 }
 
 \newcommand{\stateorder}{\preceq}
