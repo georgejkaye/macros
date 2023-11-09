@@ -18,9 +18,9 @@
     \bar{s}\IfValueT{#1}{^{#1}}
 }
 
-\newcommand{\mealyfunctionoutput}[1]{#1_{0}}
-\newcommand{\mealyfunctiontransition}[1]{#1_{1}}
-\newcommand{\transitionafter}[2]{T_{#1,#2}}
+\newcommand{\mealyfunctionoutput}[1]{#1_{1}}
+\newcommand{\mealyfunctiontransition}[1]{#1_{0}}
+\newcommand{\transitions}[4]{#1^{#2}_0(#3, #4)}
 
 
 \NewDocumentCommand\streaminit{o}{\mathsf{hd}\IfValueT{#1}{\left(#1\right)}}
