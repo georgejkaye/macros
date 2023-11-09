@@ -34,13 +34,13 @@
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{V}}
 }
 \NewDocumentCommand\gateinterpretation{o}{%
-    \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{P}}
+    \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket
 }
 
 % belnap
 \newcommand{\belnap}{\mathsf{B}}
 \newcommand{\belnapsignature}{\circuitsignature_{\belnap}}
-\newcommand{\belnapvalues}{\circuitsignaturevalues_{\belnap}}
+\newcommand{\belnapvalues}{\values_{\belnap}}
 \newcommand{\belnapgates}{\circuitsignaturegates_{\belnap}}
 \newcommand{\belnaparity}{\circuitsignaturearity_{\belnap}}
 \newcommand{\belnapcoarity}{\circuitsignaturecoarity_{\belnap}}
