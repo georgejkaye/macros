@@ -66,8 +66,14 @@
 \NewDocumentCommand\circuittostream{om}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{S}}_{#2}
 }
+\NewDocumentCommand\circuittostreami{o}{%
+    \circuittostream[\IfValueTF{#1}{#1}{-}]{\interpretation}%
+}
 \NewDocumentCommand\circuittomealy{om}{%
     \left[\IfValueTF{#1}{#1}{-}\right]_{#2}%
+}
+\NewDocumentCommand\circuittomealyi{o}{%
+    \circuittomealy[\IfValueTF{#1}{#1}{-}]{\interpretation}%
 }
 
 % extensional equivalence

@@ -86,6 +86,9 @@
 \NewDocumentCommand\mealytostream{o}{%
     {\uniquestream\IfValueTF{#1}{#1}{(-)}}%
 }
+\NewDocumentCommand\mealytostreami{o}{%
+    {\uniquestream_{\mathcal{I}}\IfValueTF{#1}{#1}{(-)}}%
+}
 \NewDocumentCommand\mealytocircuit{om}{%
     \left\langle\IfValueTF{#1}{#1}{-}\right\rangle_{#2}%
 }
