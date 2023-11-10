@@ -69,6 +69,9 @@
 \NewDocumentCommand\circuittostreami{o}{%
     \circuittostream[\IfValueTF{#1}{#1}{-}]{\interpretation}%
 }
+\NewDocumentCommand\circuittofunci{o}{%
+    \circuittofunc[\IfValueTF{#1}{#1}{-}]{\interpretation}%
+}
 \NewDocumentCommand\circuittomealy{om}{%
     \left[\IfValueTF{#1}{#1}{-}\right]_{#2}%
 }

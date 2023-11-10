@@ -95,6 +95,9 @@
 \NewDocumentCommand\mealytocircuiti{o}{%
     \mealytocircuit[\IfValueTF{#1}{#1}{-}]{\interpretation}%
 }
+\NewDocumentCommand\mealytofunc{o}{%
+    \left\langle\IfValueTF{#1}{#1}{-}\right\rangle%
+}
 \NewDocumentCommand\streamtomealy{om}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
 }
