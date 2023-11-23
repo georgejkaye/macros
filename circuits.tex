@@ -8,6 +8,12 @@
 \newcommand{\circuitsignaturecoarity}{\cod}
 
 % values
+\newcommand{\booleans}{\mathbf{B}}
+\newcommand{\boolorder}{\leq_{\booleans}}
+\newcommand{\band}{\land_{\booleans}}
+\newcommand{\bor}{\lor_{\booleans}}
+\newcommand{\bnot}{\neg_{\booleans}}
+
 \newcommand{\values}{\mathbf{V}}
 \newcommand{\valuetuple}[1]{\tuple{\values}{#1}}
 \newcommand{\valuestream}{\stream{\values}}
@@ -15,6 +21,10 @@
 \newcommand{\valuetuplestream}[1]{\stream{(\valuetuple{#1})}}
 \newcommand{\disconnected}{\bullet}
 \newcommand{\shortcircuit}{\circ}
+
+\newcommand{\belnaptobool}{\phi}
+\newcommand{\belnaptofalse}{\belnaptobool_0}
+\newcommand{\belnaptotrue}{\belnaptobool_1}
 
 % logic gates
 \newcommand{\nor}{{\downarrow}}
