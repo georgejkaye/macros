@@ -90,13 +90,13 @@
     {\uniquestream_{\mathcal{I}}\IfValueTF{#1}{#1}{(-)}}%
 }
 \NewDocumentCommand\mealytocircuit{om}{%
-    \left\langle\IfValueTF{#1}{#1}{-}\right\rangle_{#2}%
+    \left\|\IfValueTF{#1}{#1}{-}\right\|_{#2}%
 }
 \NewDocumentCommand\mealytocircuiti{o}{%
     \mealytocircuit[\IfValueTF{#1}{#1}{-}]{\interpretation}%
 }
 \NewDocumentCommand\mealytofunc{o}{%
-    \left\langle\IfValueTF{#1}{#1}{-}\right\rangle%
+    \left\|\IfValueTF{#1}{#1}{-}\right\|%
 }
 \NewDocumentCommand\streamtomealy{om}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
