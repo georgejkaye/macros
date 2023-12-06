@@ -89,11 +89,11 @@
 \NewDocumentCommand\mealytostreami{o}{%
     {\uniquestream_{\mathcal{I}}\IfValueTF{#1}{#1}{(-)}}%
 }
-\NewDocumentCommand\mealytocircuit{om}{%
-    \left\|\IfValueTF{#1}{#1}{-}\right\|_{#2}%
+\NewDocumentCommand\mealytocircuit{omm}{%
+    \left\|\IfValueTF{#1}{#1}{-}\right\|^{#2}_{#3}%
 }
 \NewDocumentCommand\mealytocircuiti{o}{%
-    \mealytocircuit[\IfValueTF{#1}{#1}{-}]{\interpretation}%
+    \mealytocircuit[\IfValueTF{#1}{#1}{-}]{\leq}{\interpretation}%
 }
 \NewDocumentCommand\mealytofunc{o}{%
     \left\|\IfValueTF{#1}{#1}{-}\right\|%
