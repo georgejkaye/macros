@@ -23,6 +23,9 @@
 \newcommand{\transitions}[4]{#1^{#2}_0(#3, #4)}
 
 
+\newcommand{\initialoutput}[2]{#1[#2]}
+\newcommand{\streamderivative}[2]{#1_{#2}}
+
 \NewDocumentCommand\streaminit{o}{\mathsf{hd}\IfValueT{#1}{\left(#1\right)}}
 \NewDocumentCommand\streamderv{o}{\mathsf{tl}\IfValueT{#1}{\left(#1\right)}}
 \newcommand{\streamcons}{\mathbin{::}}
