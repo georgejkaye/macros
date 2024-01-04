@@ -1,74 +1,31 @@
 % signature
 \newcommand{\circuitsignature}{\Sigma}
 \newcommand{\circuitsignaturevalues}{\mathcal{V}}
+\newcommand{\values}{\mathbf{V}}
 \newcommand{\circuitsignaturegates}{\mathcal{P}}
 \newcommand{\circuitsignaturegatescomb}{\mathcal{C}}
 \newcommand{\circuitsignaturegatesseq}{\mathcal{S}}
 \newcommand{\circuitsignaturearity}{\dom}
 \newcommand{\circuitsignaturecoarity}{\cod}
-
-% values
-\newcommand{\booleans}{\mathbf{B}}
-\newcommand{\boolorder}{\leq_{\booleans}}
-\newcommand{\band}{\land_{\booleans}}
-\newcommand{\bor}{\lor_{\booleans}}
-\newcommand{\bnot}{\neg_{\booleans}}
-
-\newcommand{\values}{\mathbf{V}}
-\newcommand{\valuetuple}[1]{\tuple{\values}{#1}}
-\newcommand{\valuestream}{\stream{\values}}
-\newcommand{\valuetupleseq}[1]{(\valuetuple{#1})^\star}
-\newcommand{\valuetuplestream}[1]{\stream{(\valuetuple{#1})}}
 \newcommand{\disconnected}{\bullet}
-\newcommand{\shortcircuit}{\circ}
 
-\newcommand{\belnaptobool}{\phi}
-\newcommand{\belnaptofalse}{\belnaptobool_0}
-\newcommand{\belnaptotrue}{\belnaptobool_1}
-\newcommand{\belnapexp}{\mathsf{Exp}}
-
-% logic gates
-\newcommand{\nor}{{\downarrow}}
-\newcommand{\xor}{\oplus}
-
-% circuit morphisms
-\newcommand{\fork}{{\prec}}
-\newcommand{\join}{{\succ}}
-\newcommand{\stub}{{\wr}}
-\newcommand{\delay}{\delta}
+% combinational circuits
+\newcommand{\ccirc}[1]{\mathbf{CCirc}_{#1}}
+\newcommand{\ccircsigma}{\ccirc{\Sigma}}
+% circuits with delay (temporal circuits)
+\newcommand{\tcirc}[1]{\mathbf{TCirc}_{#1}}
+\newcommand{\tcircsigma}{\tcirc{\Sigma}}
+% circuits with feedback (sequential circuits)
+\newcommand{\scirc}[1]{\mathbf{SCirc}_{#1}}
+\newcommand{\scircsigma}{\scirc{\Sigma}}
 
 % interpretation
-
 \newcommand{\interpretation}{\mathcal{I}}
-
 \NewDocumentCommand\valueinterpretation{o}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{V}}
 }
 \NewDocumentCommand\gateinterpretation{o}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket
-}
-
-% belnap
-\newcommand{\belnap}{\mathsf{B}}
-\newcommand{\belnapsignature}{\circuitsignature_{\belnap}}
-\newcommand{\belnapvalues}{\values_{\belnap}}
-\newcommand{\belnapgates}{\circuitsignaturegates_{\belnap}}
-\newcommand{\belnaparity}{\circuitsignaturearity_{\belnap}}
-\newcommand{\belnapcoarity}{\circuitsignaturecoarity_{\belnap}}
-
-\newcommand{\belnapnone}{\mathsf{n}}
-\newcommand{\belnapfalse}{\mathsf{f}}
-\newcommand{\belnaptrue}{\mathsf{t}}
-\newcommand{\belnapboth}{\mathsf{b}}
-
-\newcommand{\belnaplattice}{\values_{\belnap}}
-
-\newcommand{\belnapinterpretation}{\interpretation_{\belnap}}
-\NewDocumentCommand\belnapvalueinterpretation{o}{%
-    \valueinterpretation\IfValueT{#1}{[#1]}_{\belnap}
-}
-\NewDocumentCommand\belnapgateinterpretation{o}{%
-    \gateinterpretation\IfValueT{#1}{[#1]}_{\belnap}
 }
 
 \NewDocumentCommand\circuittofunc{om}{%
@@ -93,16 +50,6 @@
 % extensional equivalence
 \newcommand{\extequiv}[1]{\approx_{#1}}
 \newcommand{\extequivi}{\extequiv{\interpretation}}
-
-% combinational circuits
-\newcommand{\ccirc}[1]{\mathbf{CCirc}_{#1}}
-\newcommand{\ccircsigma}{\ccirc{\Sigma}}
-% circuits with delay (temporal circuits)
-\newcommand{\tcirc}[1]{\mathbf{TCirc}_{#1}}
-\newcommand{\tcircsigma}{\tcirc{\Sigma}}
-% circuits with feedback (sequential circuits)
-\newcommand{\scirc}[1]{\mathbf{SCirc}_{#1}}
-\newcommand{\scircsigma}{\scirc{\Sigma}}
 
 % sequential circuits quotiented over some interpretation
 \newcommand{\scircq}[2]{\mathbf{SCirc}_{{#1} / {#2}}}
@@ -222,3 +169,42 @@
 
 \newcommand{\transitiontranslation}[1]{#1^{\leq}_0}
 \newcommand{\outputtranslation}[1]{#1^{\leq}_1}
+
+% booleans
+\newcommand{\booleans}{\mathbf{B}}
+\newcommand{\boolorder}{\leq_{\booleans}}
+\newcommand{\band}{\land_{\booleans}}
+\newcommand{\bor}{\lor_{\booleans}}
+\newcommand{\bnot}{\neg_{\booleans}}
+\newcommand{\nor}{{\downarrow}}
+\newcommand{\xor}{\oplus}
+
+% belnap
+\newcommand{\belnaplattice}{\values_{\belnap}}
+\newcommand{\belnapinterpretation}{\interpretation_{\belnap}}
+\newcommand{\belnapfalse}{\mathsf{f}}
+\newcommand{\belnaptrue}{\mathsf{t}}
+\newcommand{\valuetuple}[1]{\tuple{\values}{#1}}
+\newcommand{\valuestream}{\stream{\values}}
+\newcommand{\valuetupleseq}[1]{(\valuetuple{#1})^\star}
+\newcommand{\valuetuplestream}[1]{\stream{(\valuetuple{#1})}}
+\newcommand{\belnap}{\mathsf{B}}
+\newcommand{\belnapsignature}{\circuitsignature_{\belnap}}
+\newcommand{\belnapvalues}{\values_{\belnap}}
+\newcommand{\belnapgates}{\circuitsignaturegates_{\belnap}}
+\newcommand{\belnaparity}{\circuitsignaturearity_{\belnap}}
+\newcommand{\belnapcoarity}{\circuitsignaturecoarity_{\belnap}}
+\NewDocumentCommand\belnapvalueinterpretation{o}{%
+    \valueinterpretation\IfValueT{#1}{[#1]}_{\belnap}
+}
+\NewDocumentCommand\belnapgateinterpretation{o}{%
+    \gateinterpretation\IfValueT{#1}{[#1]}_{\belnap}
+}
+
+% completeness
+\newcommand{\belnaptobool}{\phi}
+\newcommand{\belnaptofalse}{\belnaptobool_0}
+\newcommand{\belnaptotrue}{\belnaptobool_1}
+
+% explosion equations
+\newcommand{\belnapexp}{\mathsf{Exp}}
