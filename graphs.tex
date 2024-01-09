@@ -88,6 +88,9 @@
 \NewDocumentCommand\comonoidtohyp{om}{%
     \IfValueTF{#1}{\frobtohyp[#1]{#2}}{\frobtohyp{#2}}^\mathbf{C}
 }
+\NewDocumentCommand\comonoidtohypsigma{o}{%
+    \IfValueTF{#1}{\frobtohypsigma[#1]}{\frobtohypsigma}^\mathbf{C}
+}
 \NewDocumentCommand\termandfrobtohyp{om}{%
     \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{#2}
 }
