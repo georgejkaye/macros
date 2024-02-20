@@ -53,7 +53,7 @@
     \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{\Sigma}
 }
 \NewDocumentCommand\termtohypsigmac{o}{%
-    \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{\Sigma,C}
+    \llbracket{\IfValueTF{#1}{#1}{-}}\rrbracket_{C,\Sigma}
 }
 \NewDocumentCommand\frobtohyp{om}{%
     \left[{\IfValueTF{#1}{#1}{-}}\right]_{#2}
@@ -62,7 +62,7 @@
     \left[{\IfValueTF{#1}{#1}{-}}\right]_{\Sigma}
 }
 \NewDocumentCommand\frobtohypsigmac{o}{%
-    \left[{\IfValueTF{#1}{#1}{-}}\right]_{\Sigma,C}
+    \left[{\IfValueTF{#1}{#1}{-}}\right]_{C,\Sigma}
 }
 \NewDocumentCommand\tracedtosymandfrob{om}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{#2}
@@ -71,7 +71,7 @@
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{\Sigma}
 }
 \NewDocumentCommand\tracedtosymandfrobsigmac{o}{
-    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{\Sigma, C}
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{T}_{C, \Sigma}
 }
 \NewDocumentCommand\comonoidtofrob{o}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{C}
@@ -83,7 +83,7 @@
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{\Sigma}
 }
 \NewDocumentCommand\tracedandcomonoidtofrobsigmac{o}{
-    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{\Sigma, \mcc}
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{C, \Sigma}
 }
 \NewDocumentCommand\comonoidtohyp{om}{%
     \IfValueTF{#1}{\frobtohyp[#1]{#2}}{\frobtohyp{#2}}^\mathbf{C}
