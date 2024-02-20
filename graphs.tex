@@ -76,6 +76,9 @@
 \NewDocumentCommand\comonoidtofrob{o}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{C}
 }
+\NewDocumentCommand\comonoidtofrobc{o}{
+    \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor^\mathbf{C}_C
+}
 \NewDocumentCommand\tracedandcomonoidtofrob{om}{
     \left\lfloor\IfValueTF{#1}{#1}{-}\right\rfloor_{#2}
 }
@@ -90,6 +93,9 @@
 }
 \NewDocumentCommand\comonoidtohypsigma{o}{%
     \IfValueTF{#1}{\frobtohypsigma[#1]}{\frobtohypsigma}^\mathbf{C}
+}
+\NewDocumentCommand\comonoidtohypsigmac{o}{%
+    \IfValueTF{#1}{\frobtohypsigmac[#1]}{\frobtohypsigmac}^\mathbf{C}
 }
 \NewDocumentCommand\termandfrobtohyp{om}{%
     \llangle{\IfValueTF{#1}{#1}{-}}\rrangle_{#2}
