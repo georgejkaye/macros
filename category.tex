@@ -133,7 +133,10 @@
 \newcommand{\mon}{\mathbf{Mon}}
 \newcommand{\cmon}{\mathbf{CMon}}
 \newcommand{\comon}{\mathbf{Comon}}
-\newcommand{\ccomon}{\mathbf{CComon}}
+\NewDocumentCommand\ccomon{o}{%
+    \mathbf{CComon}\IfValueT{#1}{_{#1}}%
+}
+\newcommand{\ccomonc}{\ccomon[C]}
 \newcommand{\bialg}{\mathbf{Bialg}}
 \newcommand{\propcat}{\mathbf{PROP}}
 \newcommand{\cprop}{\mathbf{CPROP}}
