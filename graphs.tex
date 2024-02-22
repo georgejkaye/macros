@@ -120,6 +120,10 @@
 \NewDocumentCommand\grewrite{o}{%
     \rightsquigarrow\IfValueT{#1}{_{#1}}
 }
+\NewDocumentCommand\grewrites{o}{%
+    \rightsquigarrow^{\star}\IfValueT{#1}{_{#1}}
+}
+
 \NewDocumentCommand\trgrewrite{o}{%
     \rightsquigarrow\IfValueT{#1}{_{#1}}
 }
