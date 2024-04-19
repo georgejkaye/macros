@@ -109,6 +109,9 @@
 \NewDocumentCommand\foldinterfaces{o}{%
     \ulcorner{\IfValueTF{#1}{#1}{-}}\urcorner
 }
+\NewDocumentCommand\foldinterfacesc{o}{%
+    \ulcorner{\IfValueTF{#1}{#1}{-}}\urcorner_C
+}
 % graph rewriting
 \newcommand{\deriv}[1]{\xRightarrow{#1}}
 \NewDocumentCommand\rewrite{o}{%
