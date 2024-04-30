@@ -83,7 +83,7 @@
 
 \newcommand{\cfprop}{\mathbf{CFun}}
 \NewDocumentCommand\pcsprop{o}{%
-    \mathbf{PCStream}_{\IfValueT{#1}{#1}}%
+\mathbf{PCStream}_{\IfValueT{#1}{#1}}%
 }
 \newcommand{\uniquestream}{!}
 \NewDocumentCommand\mealytostream{o}{%
@@ -93,7 +93,7 @@
     {\uniquestream_{\mathcal{I}}\IfValueTF{#1}{#1}{(-)}}%
 }
 \NewDocumentCommand\mealytocircuit{omm}{%
-    \lvert\lvert\IfValueTF{#1}{#1}{-}\rvert\rvert^{#2}_{#3}%
+    \left\lvert\left\lvert\IfValueTF{#1}{#1}{-}\right\rvert\right\rvert^{#2}_{#3}%
 }
 \NewDocumentCommand\mealytocircuiti{o}{%
     \mealytocircuit[\IfValueTF{#1}{#1}{-}]{\leq}{\interpretation}%
