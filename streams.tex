@@ -1,6 +1,8 @@
 % function category
 \newcommand{\func}[1]{\mathbf{Func}_{#1}}
+\newcommand{\funcg}[2]{\mathbf{Func}_{#1}^{#2}}
 \newcommand{\funci}{\func{\interpretation}}
+\newcommand{\funcig}{\funcg{\interpretation}{+}}
 \newcommand{\val}[1]{\mathbf{Val}_{#1}}
 \newcommand{\vali}{\val{\interpretation}}
 \newcommand{\valfunc}[1]{\mathbf{VFunc}_{#1}}
@@ -40,8 +42,10 @@
 
 % categories of stream functions
 \newcommand{\streamc}[1]{\mathbf{Stream}_{#1}}
+\newcommand{\streamcg}[2]{\mathbf{Stream}_{#1}^{#2}}
 \newcommand{\streamv}{\streamc{\values}}
 \newcommand{\streami}{\streamc{\interpretation}}
+\newcommand{\streamig}{\streamcg{\interpretation}{+}}
 \newcommand{\cstream}[1]{\mathbf{CStream}_{#1}}
 \newcommand{\cstreami}{\cstream{\interpretation}}
 \newcommand{\fstream}[1]{\mathbf{FStream}_{#1}}
@@ -57,6 +61,7 @@
 
 % categories of mealy machine
 \newcommand{\mealyi}{\mathbf{Mealy}_{\interpretation}}
+\newcommand{\mealyig}{\mathbf{Mealy}_{\interpretation}^+}
 \newcommand{\trs}[2]{#1 \,|\, #2}
 
 \newcommand{\mealyarrow}[2]{\xrightarrow{#1\,|\,#2}}

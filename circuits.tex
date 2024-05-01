@@ -36,20 +36,38 @@
 \NewDocumentCommand\circuittofunc{om}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{C}}_{#2}
 }
+\NewDocumentCommand\circuittofuncg{om}{%
+    \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{C}+}_{#2}
+}
 \NewDocumentCommand\circuittostream{om}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{S}}_{#2}
+}
+\NewDocumentCommand\circuittostreamg{om}{%
+    \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{S}+}_{#2}
 }
 \NewDocumentCommand\circuittostreami{o}{%
     \circuittostream[\IfValueTF{#1}{#1}{-}]{\interpretation}%
 }
+\NewDocumentCommand\circuittostreamig{o}{%
+    \circuittostreamg[\IfValueTF{#1}{#1}{-}]{\interpretation}%
+}
 \NewDocumentCommand\circuittofunci{o}{%
     \circuittofunc[\IfValueTF{#1}{#1}{-}]{\interpretation}%
+}
+\NewDocumentCommand\circuittofuncig{o}{%
+    \circuittofuncg[\IfValueTF{#1}{#1}{-}]{\interpretation}%
 }
 \NewDocumentCommand\circuittomealy{om}{%
     \left[\IfValueTF{#1}{#1}{-}\right]_{#2}%
 }
+\NewDocumentCommand\circuittomealyg{om}{%
+    \left[\IfValueTF{#1}{#1}{-}\right]_{#2}^+%
+}
 \NewDocumentCommand\circuittomealyi{o}{%
     \circuittomealy[\IfValueTF{#1}{#1}{-}]{\interpretation}%
+}
+\NewDocumentCommand\circuittomealyig{o}{%
+    \circuittomealyg[\IfValueTF{#1}{#1}{-}]{\interpretation}%
 }
 
 % extensional equivalence
