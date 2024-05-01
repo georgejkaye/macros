@@ -97,11 +97,20 @@
 \NewDocumentCommand\mealytostreami{o}{%
     {\uniquestream_{\mathcal{I}}\IfValueTF{#1}{#1}{(-)}}%
 }
+\NewDocumentCommand\mealytostreamig{o}{%
+{\uniquestream^+_{\mathcal{I}}\IfValueTF{#1}{#1}{(-)}}%
+}
 \NewDocumentCommand\mealytocircuit{omm}{%
     \left\lvert\left\lvert\IfValueTF{#1}{#1}{-}\right\rvert\right\rvert^{#2}_{#3}%
 }
+\NewDocumentCommand\mealytocircuitg{omm}{%
+    \left\lvert\left\lvert\IfValueTF{#1}{#1}{-}\right\rvert\right\rvert^{#2+}_{#3}%
+}
 \NewDocumentCommand\mealytocircuiti{o}{%
     \mealytocircuit[\IfValueTF{#1}{#1}{-}]{\leq}{\interpretation}%
+}
+\NewDocumentCommand\mealytocircuitig{o}{%
+    \mealytocircuitg[\IfValueTF{#1}{#1}{-}]{\leq}{\interpretation}%
 }
 \NewDocumentCommand\mealytofunc{o}{%
     \lvert\lvert\IfValueTF{#1}{#1}{-}\rvert\rvert%
@@ -109,8 +118,14 @@
 \NewDocumentCommand\streamtomealy{om}{%
     \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}%
 }
+\NewDocumentCommand\streamtomealyg{om}{%
+    \llangle\IfValueTF{#1}{#1}{-}\rrangle_{#2}^+%
+}
 \NewDocumentCommand\streamtomealyi{o}{%
     \streamtomealy[\IfValueTF{#1}{#1}{-}]{\interpretation}%
+}
+\NewDocumentCommand\streamtomealyig{o}{%
+    \streamtomealyg[\IfValueTF{#1}{#1}{-}]{\interpretation}%
 }
 
 \newcommand{\stateorder}{\preceq}

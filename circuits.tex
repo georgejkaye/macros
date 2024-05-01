@@ -14,14 +14,14 @@
 % combinational circuits
 \newcommand{\ccirc}[1]{\mathbf{CCirc}_{#1}}
 \newcommand{\ccircsigma}{\ccirc{\Sigma}}
-\newcommand{\ccircsigmaplus}{\ccirc{\Sigma}^{+}}
+\newcommand{\ccircsigmag}{\ccirc{\Sigma}^{+}}
 % circuits with delay (temporal circuits)
 \newcommand{\tcirc}[1]{\mathbf{TCirc}_{#1}}
 \newcommand{\tcircsigma}{\tcirc{\Sigma}}
 % circuits with feedback (sequential circuits)
 \newcommand{\scirc}[1]{\mathbf{SCirc}_{#1}}
 \newcommand{\scircsigma}{\scirc{\Sigma}}
-\newcommand{\scircsigmaplus}{\scirc{\Sigma}^{+}}
+\newcommand{\scircsigmag}{\scirc{\Sigma}^{+}}
 \newcommand{\scircsigmap}{\scirc{\Sigma}^\mathsf{P}}
 
 % interpretation
@@ -77,6 +77,7 @@
 % sequential circuits quotiented over some interpretation
 \newcommand{\scircq}[2]{\mathbf{SCirc}_{{#1} / {#2}}}
 \newcommand{\scircsigmai}{\scircq{\Sigma}{\approx_{\interpretation}}}
+\newcommand{\scircsigmaig}{\scircq{\Sigma}{\approx^+_{\interpretation}}}
 \newcommand{\scircsigmae}{\scircq{\Sigma}{\mce_{\interpretation}}}
 \newcommand{\scircsigmaobs}{\scircq{\Sigma}{\sim_{\interpretation}}}
 
