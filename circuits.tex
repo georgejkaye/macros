@@ -32,7 +32,12 @@
 \NewDocumentCommand\gateinterpretation{o}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket
 }
-
+\NewDocumentCommand\functostream{om}{%
+    \left\ulcorner\IfValueTF{#1}{#1}{-}\right\urcorner_{#2}
+}
+\NewDocumentCommand\functostreami{o}{%
+    \functostream[\IfValueTF{#1}{#1}{-}]{\interpretation}%
+}
 \NewDocumentCommand\circuittofunc{om}{%
     \left\llbracket\IfValueTF{#1}{#1}{-}\right\rrbracket^{\mathbf{C}}_{#2}
 }
